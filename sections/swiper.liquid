@@ -1,0 +1,40 @@
+
+
+{% schema %}
+{
+  "name": "Image Gallery",
+  "blocks": [
+    {
+      "type": "image_block",
+      "name": "Image Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Image Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Gallery",
+      "blocks": [
+        { "type": "image_block" },
+        { "type": "image_block" },
+        { "type": "image_block" }
+      ]
+    }
+  ]
+}
+{% endschema %}

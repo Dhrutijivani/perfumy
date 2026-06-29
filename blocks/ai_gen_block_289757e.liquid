@@ -1,0 +1,576 @@
+{% doc %}
+  @prompt
+    Create a Shopify custom section that replicates a blog-style product feature layout.
+    
+    Design requirements:
+    - Large bold headline at the top:
+      "10 Reasons Why This Innovative Vacuum Sealer Sold Out 7 Times"
+    - Below headline, show 2 highlight rows:
+      1. Green check icon with text: "Now Finally Back In Stock"
+      2. Red tag icon with text: "61% OFF Ends Today"
+    
+    - Author section:
+      - Small round author image on left
+      - Text: "By Cynthia M."
+      - Below it: "Last Updated March 29, 2026"
+    
+    - Summary box:
+      - Light grey background box
+      - Text:
+        "Summary: Smart shoppers are ditching bulky countertop sealers and switching to Chef Preserve because it’s compact, easy to use, and comes with reusable bags. It seals food in 5 seconds, keeps it fresh, and pays for itself in a few uses."
+      - Add padding and rounded corners
+    
+    Layout:
+    - Clean, minimal, modern blog/article style
+    - Center aligned content with max-width container
+    - Proper spacing between all elements
+    - Use flexbox for icon + text alignment
+    
+    Styling:
+    - Headline: bold, large font
+    - Green icon circle for check
+    - Red badge/tag icon for discount
+    - Author image circular
+    - Summary box slightly elevated (subtle shadow)
+    
+    Responsiveness:
+    - Fully responsive
+    - On mobile, stack everything vertically with proper spacing
+    
+    Functionality:
+    - All text should be editable in Shopify theme editor
+    - Allow changing author image
+    - Allow editing summary text
+    
+    Return complete Liquid + CSS code for Shopify section
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-blog-feature-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: {{ block.settings.section_padding }}px 20px;
+  }
+
+  .ai-blog-feature-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-blog-feature-headline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.headline_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 {{ block.settings.spacing_between_elements }}px;
+    text-align: center;
+    color: {{ block.settings.headline_color }};
+  }
+
+  .ai-blog-feature-highlights-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.highlight_spacing }}px;
+    margin-bottom: {{ block.settings.spacing_between_elements }}px;
+    align-items: center;
+  }
+
+  .ai-blog-feature-highlight-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ai-blog-feature-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ai-blog-feature-icon-{{ ai_gen_id }}.green {
+    background-color: {{ block.settings.green_icon_bg }};
+  }
+
+  .ai-blog-feature-icon-{{ ai_gen_id }}.red {
+    background-color: {{ block.settings.red_icon_bg }};
+  }
+
+  .ai-blog-feature-icon-{{ ai_gen_id }} svg {
+    width: calc({{ block.settings.icon_size }}px * 0.6);
+    height: calc({{ block.settings.icon_size }}px * 0.6);
+  }
+
+  .ai-blog-feature-highlight-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.highlight_text_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.highlight_text_color }};
+  }
+
+  .ai-blog-feature-author-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: {{ block.settings.spacing_between_elements }}px;
+    justify-content: center;
+  }
+
+  .ai-blog-feature-author-image-{{ ai_gen_id }} {
+    width: {{ block.settings.author_image_size }}px;
+    height: {{ block.settings.author_image_size }}px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .ai-blog-feature-author-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-blog-feature-author-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-blog-feature-author-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.5;
+  }
+
+  .ai-blog-feature-author-info-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ai-blog-feature-author-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.author_name_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.author_text_color }};
+    margin: 0;
+  }
+
+  .ai-blog-feature-author-date-{{ ai_gen_id }} {
+    font-size: {{ block.settings.author_date_size }}px;
+    color: {{ block.settings.author_date_color }};
+    margin: 0;
+  }
+
+  .ai-blog-feature-summary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.summary_bg_color }};
+    padding: {{ block.settings.summary_padding }}px;
+    border-radius: {{ block.settings.summary_border_radius }}px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, {{ block.settings.summary_shadow_opacity }});
+  }
+
+  .ai-blog-feature-summary-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.summary_text_size }}px;
+    line-height: 1.6;
+    color: {{ block.settings.summary_text_color }};
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-blog-feature-headline-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.headline_size }}px * 0.7);
+    }
+
+    .ai-blog-feature-highlight-text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.highlight_text_size }}px * 0.9);
+    }
+
+    .ai-blog-feature-summary-text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.summary_text_size }}px * 0.95);
+    }
+  }
+{% endstyle %}
+
+<blog-feature-{{ ai_gen_id }} class="ai-blog-feature-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-blog-feature-container-{{ ai_gen_id }}">
+    {% if block.settings.headline != blank %}
+      <h1 class="ai-blog-feature-headline-{{ ai_gen_id }}">
+        {{ block.settings.headline }}
+      </h1>
+    {% endif %}
+
+    <div class="ai-blog-feature-highlights-{{ ai_gen_id }}">
+      {% if block.settings.highlight_1_text != blank %}
+        <div class="ai-blog-feature-highlight-{{ ai_gen_id }}">
+          <div class="ai-blog-feature-icon-{{ ai_gen_id }} green">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="{{ block.settings.green_icon_color }}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span class="ai-blog-feature-highlight-text-{{ ai_gen_id }}">
+            {{ block.settings.highlight_1_text }}
+          </span>
+        </div>
+      {% endif %}
+
+      {% if block.settings.highlight_2_text != blank %}
+        <div class="ai-blog-feature-highlight-{{ ai_gen_id }}">
+          <div class="ai-blog-feature-icon-{{ ai_gen_id }} red">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="{{ block.settings.red_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
+          </div>
+          <span class="ai-blog-feature-highlight-text-{{ ai_gen_id }}">
+            {{ block.settings.highlight_2_text }}
+          </span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-blog-feature-author-{{ ai_gen_id }}">
+      <div class="ai-blog-feature-author-image-{{ ai_gen_id }}">
+        {% if block.settings.author_image %}
+          <img
+            src="{{ block.settings.author_image | image_url: width: 200 }}"
+            alt="{{ block.settings.author_name | escape }}"
+            loading="lazy"
+            width="200"
+            height="200"
+          >
+        {% else %}
+          <div class="ai-blog-feature-author-placeholder-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        {% endif %}
+      </div>
+      <div class="ai-blog-feature-author-info-{{ ai_gen_id }}">
+        {% if block.settings.author_name != blank %}
+          <p class="ai-blog-feature-author-name-{{ ai_gen_id }}">
+            By {{ block.settings.author_name }}
+          </p>
+        {% endif %}
+        {% if block.settings.last_updated != blank %}
+          <p class="ai-blog-feature-author-date-{{ ai_gen_id }}">
+            Last Updated {{ block.settings.last_updated }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if block.settings.summary_text != blank %}
+      <div class="ai-blog-feature-summary-{{ ai_gen_id }}">
+        <div class="ai-blog-feature-summary-text-{{ ai_gen_id }}">
+          {{ block.settings.summary_text }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</blog-feature-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BlogFeature{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('blog-feature-{{ ai_gen_id }}', BlogFeature{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Blog product feature",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Headline"
+    },
+    {
+      "type": "textarea",
+      "id": "headline",
+      "label": "Headline",
+      "default": "10 Reasons Why This Innovative Vacuum Sealer Sold Out 7 Times"
+    },
+    {
+      "type": "range",
+      "id": "headline_size",
+      "label": "Headline size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Headline color",
+      "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "Highlights"
+    },
+    {
+      "type": "text",
+      "id": "highlight_1_text",
+      "label": "Highlight 1 text",
+      "default": "Now Finally Back In Stock"
+    },
+    {
+      "type": "text",
+      "id": "highlight_2_text",
+      "label": "Highlight 2 text",
+      "default": "61% OFF Ends Today"
+    },
+    {
+      "type": "range",
+      "id": "highlight_text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "highlight_text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "highlight_spacing",
+      "label": "Spacing between highlights",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "green_icon_bg",
+      "label": "Green icon background",
+      "default": "#10b981"
+    },
+    {
+      "type": "color",
+      "id": "green_icon_color",
+      "label": "Green icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "red_icon_bg",
+      "label": "Red icon background",
+      "default": "#ef4444"
+    },
+    {
+      "type": "color",
+      "id": "red_icon_color",
+      "label": "Red icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Author"
+    },
+    {
+      "type": "image_picker",
+      "id": "author_image",
+      "label": "Author image"
+    },
+    {
+      "type": "range",
+      "id": "author_image_size",
+      "label": "Image size",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author name",
+      "default": "Cynthia M."
+    },
+    {
+      "type": "range",
+      "id": "author_name_size",
+      "label": "Name size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "author_text_color",
+      "label": "Name color",
+      "default": "#121212"
+    },
+    {
+      "type": "text",
+      "id": "last_updated",
+      "label": "Last updated date",
+      "default": "March 29, 2026"
+    },
+    {
+      "type": "range",
+      "id": "author_date_size",
+      "label": "Date size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "author_date_color",
+      "label": "Date color",
+      "default": "#6b7280"
+    },
+    {
+      "type": "header",
+      "content": "Summary box"
+    },
+    {
+      "type": "richtext",
+      "id": "summary_text",
+      "label": "Summary text",
+      "default": "<p><strong>Summary:</strong> Smart shoppers are ditching bulky countertop sealers and switching to Chef Preserve because it's compact, easy to use, and comes with reusable bags. It seals food in 5 seconds, keeps it fresh, and pays for itself in a few uses.</p>"
+    },
+    {
+      "type": "range",
+      "id": "summary_text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "summary_text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "summary_bg_color",
+      "label": "Background color",
+      "default": "#f3f4f6"
+    },
+    {
+      "type": "range",
+      "id": "summary_padding",
+      "label": "Padding",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "summary_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "summary_shadow_opacity",
+      "label": "Shadow opacity",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0.1
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max content width",
+      "min": 400,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "spacing_between_elements",
+      "label": "Spacing between elements",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog product feature"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,278 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<div class="hero-slider">
+  {% for block in section.blocks %}
+    <div class="hero-banner-main-container {{ block.settings.layout }}">
+      {% if block.settings.block_image != blank %}
+        <div class="image-block">
+          <img src="{{ block.settings.block_image | image_url }}" alt="Hero Slider Image">
+        </div>
+      {% else %}
+        <img src="{{ 'main-banner-02.webp' | asset_url }}" alt="Default image">
+      {% endif %}
+      <div class="text-information-container">
+        <h1>{{ block.settings.heading }}</h1>
+        <h2>{{ block.settings.sub_heading }}</h2>
+        <p>{{ block.settings.pera }}</p>
+        <a href="{{block.settings.btn_url}}">
+          <span>{{ block.settings.btn_text }}</span>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+   
+  div#shopify-section-template--26862770979097__hero_slider_yghHyD {
+    overflow: hidden;
+  }
+   .shopify-section{
+    overflow: hidden;
+}
+
+  .slick-slide {
+    display: flex !important;
+    height: auto;
+  }
+
+ /* .slick-slide > div {
+    width: 100%;
+    display: flex;
+  } */
+
+  .hero-banner-main-container.right {
+    direction: rtl;
+  }
+
+  .hero-banner-main-container.right .text-information-container {
+    direction: ltr;
+  }
+
+  .hero-banner-main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+width: 100%;
+    height: 650px;
+    overflow: hidden;
+  }
+  .image-block {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-banner-main-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .text-information-container {
+    width: 100%;
+    background-color: #d9f0f2;
+    padding-right: 100px;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .text-information-container h1 {
+    font-size: 60px;
+    
+    margin-bottom: 0;
+  }
+  .text-information-container h2 {
+    font-size: 40px;
+  }
+  .text-information-container p {
+    font-size: 20px;
+    margin-top: 10px;
+
+  }
+  .text-information-container a {
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 35px;
+    background-color: aliceblue;
+    text-decoration: none;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  .text-information-container span {
+    color: black;
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero-banner-main-container {
+      height: 400px;
+      overflow: hidden;
+    }
+    .text-information-container h1 {
+      font-size: 31px;
+    }
+    .text-information-container h2 {
+      font-size: 22px;
+    }
+
+    .text-information-container p {
+      font-size: 13px;
+      margin-top: 0px;
+    }
+    .text-information-container a {
+      padding: 9px 16px;
+    }
+
+    .text-information-container span {
+      color: black;
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .hero-banner-main-container {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+    .text-information-container h1 {
+      font-size: 23px;
+    }
+    .text-information-container h2 {
+      font-size: 15px;
+      margin: 5px;
+    }
+    .text-information-container p {
+      font-size: 11px;
+      margin-top: 10px;
+    }
+    .text-information-container a {
+      padding: 3px 24px;
+    }
+
+    .text-information-container span {
+      font-size: 12px;
+    }
+    .text-information-container {
+      padding-right: 63px;
+      padding-left: 63px;
+    }
+    .text-information-container a {
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<script>
+  $(document).ready(function () {
+    $('.hero-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+       autoplay: true,
+      autoplaySpeed: 2000,
+      dots: true,
+      arrows: true,
+       prevArrow: `
+      <button type="button" class="slick-prev custom-arrow">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    `,
+
+    nextArrow: `
+      <button type="button" class="slick-next custom-arrow">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path d="M9 6L15 12L9 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    `
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Hero-Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "hero_slider",
+      "name": "Hero Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Select Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Add Heading",
+          "default": "Natural Perfume"
+        },
+        {
+          "type": "text",
+          "id": "sub_heading",
+          "label": "Add Sub-Heading",
+          "default": "Strong Fragrance Perfume"
+        },
+        {
+          "type": "text",
+          "id": "pera",
+          "label": "Add Other Information",
+          "default": "Phasellus condimentum, elit eu sagittis ullamcorper, mauris enim interdum quam."
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Add Button Text",
+          "default": "Discover Now"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Add Button Link"
+        },
+
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "options": [
+            { "value": "left", "label": "Image Left" },
+            { "value": "right", "label": "Image Right" }
+          ],
+          "default": "left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero-Slider",
+      "blocks": [
+        {
+          "type": "hero_slider"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

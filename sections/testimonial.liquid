@@ -1,0 +1,191 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<div class="testimonial-main-container">
+  <div class="testimonial-all-info-container">
+    <h2 class="testimonial-heading">
+      {{ section.settings.heading }}
+    </h2>
+    <span class="line"></span>
+    <div class="testimonial-slider">
+      {% for block in section.blocks %}
+        <div class="testimonial-item">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.name }}">
+          {% endif %}
+
+          <div class="testi-content">
+            {% if block.settings.name != blank %}
+              <h3>{{ block.settings.name }}</h3>
+            {% endif %}
+
+            {% if block.settings.designation != blank %}
+              <p class="designation">{{ block.settings.designation }}</p>
+            {% endif %}
+
+            {% if block.settings.review != blank %}
+              <p class="review">{{ block.settings.review }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+      .testimonial-main-container{
+      width:100%;
+      background-color:#EEF0F4;
+      text-align:center;
+      margin-top:50px;
+      padding-bottom: 55px;
+
+      }
+      .testimonial-all-info-container{
+          width:100%;
+      max-width:870px;
+      margin:0 auto;
+      padding:30px 33px;
+      }
+
+
+  .testimonial-heading{
+  color:#212627;
+  font-family: "Inter", sans-serif;
+  font-size:36px;
+  font-weight:bolder;
+  padding-top:40px;
+  margin: 0 0 48px;
+  }
+
+      .testimonial-item{
+              display: flex;
+      flex-direction: column;
+       align-items: center;
+
+      }
+          .testimonial-item img {
+      display: block;
+      width: 100%;
+      max-width: 88px;
+          border-radius: 50%;
+  }
+
+      .testimonial-item h3{
+      font-size:21px;
+      font-family: "Inter", sans-serif;
+      color: #212627;
+      margin: 16px 0 4px;
+      font-weight:bold;
+      }
+      .designation{
+      margin:0;
+      font-family: "Inter", sans-serif;
+      }
+
+  .testimonial-item .review {
+      margin: 15px 0 25px;
+      font-family: "Inter", sans-serif;
+  }
+  .line{
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #c9a96e;
+    margin: -30px auto 30px;
+  }
+     .testimonial-main-container .slick-dots li button:before {
+      font-family: 'slick';
+      font-size: 17px;
+      line-height: 20px
+     }
+     @media (max-width: 425px) {
+    .testimonial-heading {
+
+      font-size: 24px;
+
+      padding-top: 30px;
+      margin: 0px 0 37px;
+  }
+
+
+  }
+</style>
+
+<script>
+  $(document).ready(function () {
+    $('.testimonial-slider').slick({
+      dots: true,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      /*autoplay: true,*/
+      autoplaySpeed: 3000,
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "TESTIMONIALS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "text",
+          "id": "designation",
+          "label": "Designation",
+          "default": "Customer"
+        },
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Review Text",
+          "default": "Write customer feedback here..."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

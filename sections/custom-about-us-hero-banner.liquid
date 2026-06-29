@@ -1,0 +1,173 @@
+
+  <div class="hero-section">
+
+  <div class="about-us-img-container">
+    {% if section.settings.main_image != blank %}
+      <img src="{{ section.settings.main_image | image_url }}" alt="Main Image"/>
+    {% endif %}
+  </div>
+
+  <div class="content">
+    <div class="small-heading">
+  {{ section.settings.heading }}
+</div>
+
+<div class="sub-heading">
+  {{ section.settings.subheading  }}
+</div>
+
+<div class="custom-about-description">
+  {{ section.settings.description }}
+</div>
+   
+
+    {% if section.settings.button_label != blank %}
+    <div class="about-hero-btn">
+      <a href="{{ section.settings.button_link }}" class="btn">
+        {{ section.settings.button_label }}
+      </a>
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+
+<style>
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  font-family: "Iosevka Charon", monospace;
+}
+
+/* small-heading */
+ .content .small-heading , .sub-heading {
+    font-size: 50px;
+}
+
+/* Image */
+.about-us-img-container {
+  width: 100%;
+  height: 100%;
+}
+
+.about-us-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay Content */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  
+  z-index: 2;
+  color:white;
+}
+
+
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #d4a373;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.about-hero-btn{
+margin-top:30px;
+}
+
+.content p{
+margin:0;
+ 
+}
+
+.custom-about-description{
+ font-size: 30px;
+}
+
+
+
+
+@media (max-width: 768px) {
+ .content .small-heading , .sub-heading {
+    font-size: 26px;
+}
+.custom-about-description {
+    font-size: 14px;
+}
+
+.btn {
+     padding: 7px 21px;
+}
+
+ .hero-section {
+  height: 50vh;
+  
+}
+
+
+
+
+}
+
+
+
+
+
+</style>
+
+{% schema %}
+{
+  "name": "About Us Hero Section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Small Heading",
+   
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Main Heading",
+     
+    },
+   {
+  "type": "richtext",
+  "id": "description",
+  "label": "Description"
+},
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Explore Our Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us Hero Section"
+    }
+  ]
+}
+{% endschema %}

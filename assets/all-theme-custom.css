@@ -1,0 +1,37 @@
+    .section-template--26862665498905__main-padding {
+        width: 100%;
+        max-width: 1300px;
+        padding: 10px 20px 10px 20px;
+        background-color:#EEF0F4;
+    }
+.scroll-trigger:not(.scroll-trigger--offscreen).animate--fade-in {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+        font-weight: 600;
+    color: #BA8D84;
+}
+section#shopify-section-template--26862665498905__main {
+    background-color:#EEF0F4;
+}
+.newsletter__wrapper.color-scheme-e31c82f0-c8e6-499a-a26d-7ea58273324e.gradient.content-container.isolate.content-container--full-width.section-sections--26862665859353__newsletter_JeXL6C-padding{
+            display: flex;
+            align-items: center;
+                width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.newsletter.center {
+    background-color:  #1A5B6F;
+}
+h2.inline-richtext.h1.scroll-trigger.animate--slide-in {
+    font-size: 44px;
+}
+  .newsletter .field:after, .select:after, .customer .field:after, .customer select:after, .localization-form__select:after {
+    border-radius: 15px;
+}
+
+/* Reviews */
+.jdgm-star {
+    font-family: 'JudgemeStar'!important;
+}

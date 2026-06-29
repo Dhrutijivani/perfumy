@@ -1,0 +1,242 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+
+
+<div class="heading-text">
+<h2>Our Customer feedback</h2>
+<h1>What our Customers says</h1>
+</div>
+
+ <div class="column-slider">
+  {% for block in section.blocks %}
+
+    <div class="slide-item">
+
+      <div class="testimonial-card">
+
+        <div class="quote">“</div>
+
+        <p class="testimonial-text">
+          {{ block.settings.column_heading }}
+        </p>
+
+        <div class="user-info">
+
+          <div class="round-image-container">
+            {% if block.settings.column_image_round != blank %}
+              <img src="{{ block.settings.column_image_round | image_url }}" alt="">
+            {% else %}
+              <img src="{{ 'user-02.webp' | asset_url }}" alt="">
+            {% endif %}
+          </div>
+
+          <div class="text-containerrr">
+            <h5>{{ block.settings.column_text }}</h5>
+            <p>{{ block.settings.column_text_2 }}</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% endfor %}
+</div>
+<style>
+    .heading-text{
+       text-align: center;
+       margin-top: 50px;
+        font-family: "Lato", sans-serif;
+    }
+    .column-slider{
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+   .slide-item {
+  display: flex !important;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background: #e9f0f2;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 446px;
+  width: 100%;
+  padding-bottom: 50px;
+   margin-right: 10px;
+    margin-left: 10px;
+}
+
+.quote {
+  font-size: 40px;
+  color: #2f6f73;
+  margin-bottom: 0px;
+      font-weight: bolder;
+}
+
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+      margin-top: 0;
+}
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.round-image-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.round-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.text-containerrr h5 {
+  margin: 0;
+  font-size: 20px;
+   font-family: "Lato", sans-serif;
+}
+
+
+.text-containerrr p {
+  margin: 0;
+  font-size: 18px;
+  color: #777;
+}
+
+
+@media (min-width: 768px) and (max-width: 1440px) {
+.slick-initialized .slick-slide {
+   
+   
+    padding: 0 5px;
+}
+}
+@media (max-width: 425px) {
+
+.heading-text{
+    margin-top: 20px;
+}
+ .heading-text h2{
+    font-size: 13px;
+ }
+ .heading-text h1{
+    font-size: 20px;
+ }
+}
+
+</style>
+
+
+
+
+ <script>
+
+   $(document).ready(function () {
+   $('.column-slider').slick({
+  dots: false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll:1,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    
+  ]
+});
+  });
+				
+</script>
+
+
+{% schema %}
+{
+  "name": "Multi Column",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "multi_column_card",
+      "name": "Multi Column Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "column_image",
+          "label": "Select Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image_round",
+          "label": "Select Rounded Image"
+        },
+        {
+          "type": "text",
+          "id": "column_heading",
+          "label": "Heading",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna sed lectus iaculis fringilla. In eu ligula efficitur,"
+        },
+        {
+          "type": "text",
+          "id": "column_text",
+          "label": "Text",
+          "default": "Meka don"
+        },
+        {
+          "type": "text",
+          "id": "column_text_2",
+          "label": "Text 2",
+          "default": "developer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multi Column"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,182 @@
+
+
+{% assign banners = shop.metaobjects.hero_banner_metaobject.values %}
+
+{% for item in banners %}
+  <div class="item">
+    <div class="background-image-container">
+      
+      <img src="{{ item.background_image.value | image_url }}" alt="Hero Image">
+
+      <div class="all-text-container">
+        <div class="title-price-container">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.special_price }}</p>
+        </div>
+
+        <div class="image-with-text-container">
+          <div class="image-with-text-1-container">
+          <div class="small-image-container">
+            <img src="{{ item.image_1.value | image_url }}" alt="image1">
+          </div>
+          <p>{{ item.image_1_text }}</p>
+          </div>
+
+
+          <div class="image-with-text-2-container">
+          <div class="small-image-container">
+            <img src="{{ item.image_2.value | image_url }}" alt="image2">
+          </div>
+          <p>{{ item.image_2_text }}</p>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <a class="btn-a-container" href="{{ item.btn_url }}">{{ item.btn_text }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+<style>
+    .background-image-container{
+      width:100%;
+      height:880px;
+    overflow: hidden;
+    position: relative;
+    }
+    .item{
+     margin-top:70px;
+    }
+  .background-image-container img{
+     width:100%;
+     height:100%;
+     object-fit:cover;
+      object-position: center;
+  }
+
+  .small-image-container{
+  height:30px;
+  width:30px;
+  overflow:hidden;
+  }
+  .small-image-container img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    background: transparent !important;
+
+  }
+  .all-text-container{
+   position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+   
+    width: 518px;
+    font-family: "Jost", sans-serif;
+  }
+.title-price-container h3{
+ font-size:70px;
+     color: #103178;
+    font-weight: 600;
+      margin:0 0 20px;
+
+}
+.title-price-container p{
+   font-size:24px;
+   margin:0 0 20px;
+}
+.image-with-text-container{
+display: flex;
+    
+    margin: 0 0 20px;
+    align-items: center;
+}
+
+
+.image-with-text-container p{
+margin:0;
+font-weight: 600;
+    color: #ff9923;
+    font-size: 18px;
+        padding: 5px 20px;
+}
+.image-with-text-1-container {
+    display: flex;
+    align-items: center;
+}
+.image-with-text-2-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn-container a{
+      font-weight: 600;
+    padding: 15px 50px;
+    font-size: 21px;
+     color: white;
+     border-radius: 42px;
+     
+         text-decoration: none;
+             text-decoration: none;
+    background-color: #ff9923;
+}
+.btn-container{
+margin-top:40px;
+}
+
+
+
+
+    @media (max-width: 425px){
+  .all-text-container{
+   
+    width: 300px;
+     left: 50%;
+    text-align:center;    
+    
+  }
+.title-price-container h3{
+ font-size:37px;
+    }
+
+    
+.image-with-text-container {
+    flex-direction: column;
+}
+.btn-container a {
+   
+    padding: 10px 27px;
+    font-size: 18px;
+}
+ .background-image-container{
+    
+      height:650px;
+ }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+.all-text-container{
+  
+    left: 40%;
+}
+
+
+}
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Metaobject Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Metaobject Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,156 @@
+<div class="single-video-main-container">
+
+<div class="video-box">
+
+  <!-- 🔥 Dynamic Cover Image -->
+  {% if section.settings.cover_image != blank %}
+    <img 
+      src="{{ section.settings.cover_image | image_url }}" 
+      class="video-cover"
+      alt="cover"
+    >
+  {% endif %}
+
+  <!-- Video -->
+  <video class="custom-video" controls >
+    {% for source in section.settings.video.sources %}
+      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+    {% endfor %}
+  </video>
+
+  <!-- Button -->
+  <button class="toggle-btn">▶</button>
+
+</div>
+</div>
+
+<style>
+    .single-video-main-container {
+     width:100%;
+     max-width:1400px;
+     margin:0 auto;
+     padding:0 20px;
+
+    }
+.video-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 16px;
+  
+}
+.video-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔥 center button */
+.toggle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 5;
+
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.toggle-btn:active {
+  transform: translate(-50%, -50%) scale(0.85);
+}
+.video-box video {
+  pointer-events: none; 
+}
+
+/* hover effect */
+.toggle-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+@media (max-width: 1024px) {
+ .video-box {
+  aspect-ratio: 13/9;
+ }
+}
+@media (max-width: 425px) {
+ .video-box {
+  aspect-ratio: 11/10;
+ }
+
+</style>
+
+
+ <script>
+document.querySelectorAll('.video-box').forEach(box => {
+  const video = box.querySelector('.custom-video');
+  const btn = box.querySelector('.toggle-btn');
+  const cover = box.querySelector('.video-cover');
+
+  function animateIcon(icon) {
+    btn.style.opacity = "0";
+
+    setTimeout(() => {
+      btn.innerHTML = icon;
+      btn.style.opacity = "1";
+    }, 150);
+  }
+
+  function togglePlay() {
+    if (video.paused) {
+      video.play();
+      animateIcon("⏸"); // 🔥 animated change
+      if (cover) cover.style.display = "none";
+    } else {
+      video.pause();
+      animateIcon("▶");
+    }
+  }
+
+  box.addEventListener('click', togglePlay);
+});
+</script> 
+
+
+
+{% schema %}
+{
+  "name": "Single Video",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Select Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "Cover Image"
+}
+  ],
+  "presets": [
+    {
+      "name": "Single Video"
+    }
+  ]
+}
+{% endschema %}

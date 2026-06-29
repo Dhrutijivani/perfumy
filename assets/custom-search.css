@@ -1,0 +1,145 @@
+
+
+ /* Hide search box by default */
+.custom-search-box {
+  display: none;
+  position: absolute;
+  top: 80%; /* show under header */
+  right: 15%;
+  width: 300px;
+  background: #0E1B4D;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 200;
+}
+
+.custom-search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Results dropdown */
+.search-results {
+  margin-top: 8px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.result-item:hover {
+  background: #f7f7f7;
+  color: #000000;
+  transition: 0.5s;
+  border-radius: 8px;
+  text-decoration: underline;
+}
+
+.result-item img {
+  width: 36px;
+  /* height: 36px; */
+  heighyt: auto;
+  margin-right: 10px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+
+.no-results {
+  padding: 12px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+.no-results span{
+  font-size: 20px;
+}
+
+
+
+@media (max-width: 1440px)
+{
+    .custom-search-box {
+        right: 4%;
+    }
+}
+
+
+@media (max-width: 768px)
+{
+    .custom-search-box {
+        right: 0%;
+        top: 90%;
+        padding: 8px;
+
+    }
+}
+
+/* ✅ Mobile adjustment */
+@media (max-width: 426px) 
+{
+    /* .custom-search-box .close-search
+        {
+            display: flex;
+        } */
+        /* .custom-search-box {
+            position: relative;  
+            top: auto;
+            border: none;
+            box-shadow: none;
+            padding: 6px 10px;
+            background: #0f1a3a; 
+        }
+
+        .custom-search-box input {
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            color: #000;
+        }
+
+        .custom-search-box .close-search {
+            color: #fff; 
+            font-weight: bold;
+        } 
+    */
+
+   .custom-search-box
+    {
+        right: 5%;
+        top: 80%;
+        padding: 8px;
+        width: 385px;
+    }
+}
+
+@media (max-width: 376px) {
+    .custom-search-box {
+        top: 85%;
+        padding: 10px;
+        width: 375px;
+        right: 0px;
+    }
+}
+
+@media (max-width: 320px) {
+    .custom-search-box {
+        top: 90%;
+        padding: 6px;
+        width: 320px;
+        right: 0;
+    }
+}

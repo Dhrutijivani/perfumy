@@ -1,0 +1,237 @@
+{% doc %}
+  @prompt
+    Create a horizontal banner section with two parts side by side: on the left, bold text saying "60 Day Money Back Guarantee" on a light gray background, and on the right, a bold call-to-action button styled as a large dark red/crimson rectangular button with white text saying "GET 61% OFF". The section should be full width, with the left text area taking about 60% of the width and the right button area taking about 40%. The overall background should be light gray. Both the text and button text should be customizable in the theme editor. The button color, text color, and background color should also be customizable.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-guarantee-banner-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-guarantee-banner__container-{{ ai_gen_id }} {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    margin-top:100px;
+    margin-bottom:100px;
+  
+  }
+
+  .ai-guarantee-banner__text-section-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.text_width_percent }}%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    background-color: {{ block.settings.background_color }};
+     
+  }
+
+  .ai-guarantee-banner__text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.text_color }};
+    text-align: center;
+    margin: 0;
+  }
+
+  .ai-guarantee-banner__button-section-{{ ai_gen_id }} {
+    flex: 0 0 {{ 100 | minus: block.settings.text_width_percent }}%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+
+  .ai-guarantee-banner__button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+
+  .ai-guarantee-banner__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-guarantee-banner__container-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+
+    .ai-guarantee-banner__text-section-{{ ai_gen_id }},
+    .ai-guarantee-banner__button-section-{{ ai_gen_id }} {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+
+    .ai-guarantee-banner__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.8 }}px;
+    }
+
+    .ai-guarantee-banner__button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.button_text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<guarantee-banner-{{ ai_gen_id }} class="ai-guarantee-banner-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-guarantee-banner__container-{{ ai_gen_id }}">
+    <div class="ai-guarantee-banner__text-section-{{ ai_gen_id }}">
+      <p class="ai-guarantee-banner__text-{{ ai_gen_id }}">{{ block.settings.guarantee_text }}</p>
+    </div>
+    <div class="ai-guarantee-banner__button-section-{{ ai_gen_id }}">
+      <a href="{{ block.settings.button_link }}" class="ai-guarantee-banner__button-{{ ai_gen_id }}">
+        {{ block.settings.button_text }}
+      </a>
+    </div>
+  </div>
+</guarantee-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class GuaranteedBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+    customElements.define('guarantee-banner-{{ ai_gen_id }}', GuaranteedBanner{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Guarantee banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "text_width_percent",
+      "label": "Text section width",
+      "min": 40,
+      "max": 70,
+      "step": 5,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Text section"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee text",
+      "default": "60 Day Money Back Guarantee"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "Button section"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "GET 61% OFF"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Button vertical padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Button horizontal padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#8B0000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#6B0000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f3f3f3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guarantee banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,208 @@
+
+
+<div class="brand-story-main-container">
+  <div class="brand-story__wrapper">
+    
+    <div class="brand-story__header">
+      <h2 class="brand-story__main-heading">{{ section.settings.main_heading }}</h2>
+      <p class="brand-story__sub_title">{{ section.settings.sub_title }}</p>
+    </div>
+
+    <div class="brand-story__content">
+      <div class="brand-story__image">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      <div class="brand-story__text-column">
+        <span class="brand-story__subheading">{{ section.settings.welcome_text }}</span>
+        <div class="brand-story__description">
+          {{ section.settings.story_text }}
+        </div>
+        <div class="brand-story__description">
+          {{ section.settings.story_text-2 }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+{%- style -%}
+ 
+ .brand-story-main-container{
+  background-color:#F7F8EA;
+  padding-top:5px;
+ }
+
+.brand-story__sub_title{
+ font-size: 30px;
+ margin: 0;
+}
+
+
+  .brand-story__wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 47px 20px;
+    text-align: center;
+     font-family: "Iosevka Charon", monospace;
+  }
+
+  .brand-story__header {
+    margin-bottom: 40px;
+  }
+
+  .brand-story__main-heading {
+       font-family: "Iosevka Charon", monospace;
+    font-size: 50PX;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top:70px;
+    margin-bottom:0;
+
+  }
+
+  .brand-story__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+      align-items: center;
+      gap:50px;
+  }
+
+  .brand-story__image {
+   width:100%;
+    height: 400px;
+    border-radius: 15px;
+
+  }
+
+  .brand-story__image img {
+   width:100%;
+   height:100%;
+    border-radius: 15px;
+  }
+
+  .brand-story__text-column {
+    padding: 20px;
+    text-align:center;
+    
+  }
+
+  .brand-story__subheading {
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 15px;
+  
+  }
+
+  .brand-story__description {
+    line-height: 1.6;
+    color: #333;
+     font-size: 20px;
+  }
+
+
+  @media screen and (min-width: 769px) {
+    .brand-story__content {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+    }
+    .brand-story__image, .brand-story__text-column {
+      flex: 1;
+    }
+  }
+
+
+
+.brand-story__main-heading {
+    margin-top: 23px;
+        font-size: 34PX;
+}
+
+.brand-story__sub_title {
+    font-size: 21px;
+  }
+.brand-story__content {
+    gap: 0px;
+}
+
+.brand-story__subheading {
+     font-size: 20px;
+  line-height: 12px;
+  }
+  .brand-story__description {
+    font-size: 15px;
+  }
+
+
+{%- endstyle -%}
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Brand Story ",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f9f6f1"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Subtitle",
+      
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Story Image"
+    },
+    {
+      "type": "text",
+      "id": "welcome_text",
+      "label": "Welcome Heading",
+      "default": "Welcome to The Scentery!"
+    },
+    {
+      "type": "richtext",
+      "id": "story_text",
+      "label": "Story Description",
+      "default": "<p>A journey through scent, starting from a vision of capturing memories...</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "story_text-2",
+      "label": "Story Description-2",
+      "default": "<p>A journey through scent, starting from a vision of capturing memories...</p>"
+    }
+    
+  ],
+  "presets": [
+    {
+      "name": "Brand Story "
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,17 @@
+{% comment %} <div class="custom-search">
+  <input type="text" id="customSearchInput" placeholder="Search products..." autocomplete="off" />
+  <div id="customSearchResults" class="search-results"></div>
+</div> {% endcomment %}
+
+
+
+<a href="javascript:void(0)" class="header__icon header__icon--search link focus-inset" id="search-toggle">
+  <span class="svg-wrapper">{{ 'icon-search.svg' | inline_asset_content }}</span>
+  <span class="visually-hidden">Search</span>
+</a>
+
+<div id="custom-search-box" class="custom-search-box">
+  <input type="text" id="customSearchInput" placeholder="Search products..." autocomplete="off">
+   {% comment %} <button id="closeSearch" class="close-search">&times;</button> {% endcomment %}
+  <div id="customSearchResults" class="search-results"></div>
+</div>

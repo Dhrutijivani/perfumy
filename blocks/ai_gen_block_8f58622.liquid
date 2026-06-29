@@ -1,0 +1,1136 @@
+{% doc %}
+  @prompt
+    Create a Shopify custom section that replicates a long-form product feature layout based on a high-converting advertorial style.
+    
+    The section should display 10 feature blocks in sequence, combining two reference layouts into one continuous section.
+    
+    Structure:
+    - Each feature block contains:
+      - An image on one side
+      - Text content on the other side
+    - Alternate layout:
+      - First block: image left, text right
+      - Second block: image right, text left
+      - Continue alternating for all items
+    
+    Content:
+    - Each block should include:
+      - Numbered heading (e.g., "1. Keeps Food Fresh")
+      - Short description paragraph
+    - Include total 10 sections (like a list of reasons)
+    
+    Special elements:
+    - Include one multi-image grid (for step-by-step usage)
+    - Include one testimonial-style image grid
+    - Include one bonus section at the end with:
+      - Warranty badge image
+      - "Bonus Reason" heading
+      - Short promotional text
+    
+    Design:
+    - Clean, modern, high-converting landing page style
+    - Proper spacing between sections
+    - Images with rounded corners
+    - Text aligned neatly with good readability
+    - Use a max-width container and center the content
+    
+    Responsive:
+    - On mobile:
+      - Stack image and text vertically
+      - Maintain spacing and readability
+    
+    Functionality:
+    - All images should be changeable in Shopify editor
+    - All headings and text should be editable
+    - Allow adding/removing blocks dynamically
+    
+    Important:
+    - Combine both layouts into ONE continuous section
+    - Maintain consistent spacing and alignment throughout
+    - Do not create multiple sections
+    
+    Return complete Liquid + CSS code   Make the design visually similar to a high-converting product advertorial landing page with alternating image-text layout., Show the number and heading side by side, and in one section add a video instead of an image., Show the number in black color and bold, and make the number’s font size adjustable., Show a video in the first one.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-features-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 20px;
+  }
+
+  .ai-product-features-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-product-features-item-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.item_gap }}px;
+    align-items: center;
+    margin-bottom: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-product-features-item-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-product-features-item-{{ ai_gen_id }}.reverse {
+    direction: rtl;
+  }
+
+  .ai-product-features-item-{{ ai_gen_id }}.reverse > * {
+    direction: ltr;
+  }
+
+  .ai-product-features-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    position: relative;
+  }
+
+  .ai-product-features-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: block;
+  }
+
+  .ai-product-features-video-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: block;
+  }
+
+  .ai-product-features-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-product-features-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-features-placeholder-message-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-product-features-content-{{ ai_gen_id }} {
+    padding: 20px;
+  }
+
+  .ai-product-features-title-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .ai-product-features-number-{{ ai_gen_id }} {
+    font-size: {{ block.settings.number_size }}px;
+    font-weight: 900;
+    color: #000000;
+    flex-shrink: 0;
+  }
+
+  .ai-product-features-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  .ai-product-features-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-product-features-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.grid_columns }}, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-bottom: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-product-features-grid-item-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-product-features-grid-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: block;
+  }
+
+  .ai-product-features-grid-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-product-features-grid-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-features-bonus-{{ ai_gen_id }} {
+    background-color: {{ block.settings.bonus_bg_color }};
+    border-radius: {{ block.settings.bonus_border_radius }}px;
+    padding: {{ block.settings.bonus_padding }}px;
+    text-align: center;
+    margin-top: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-product-features-bonus-badge-{{ ai_gen_id }} {
+    width: {{ block.settings.bonus_badge_size }}px;
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .ai-product-features-bonus-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.bonus_badge_size }}px;
+    height: {{ block.settings.bonus_badge_size }}px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-product-features-bonus-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-product-features-bonus-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.bonus_heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.bonus_heading_color }};
+    margin: 0 0 16px 0;
+  }
+
+  .ai-product-features-bonus-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.bonus_text_size }}px;
+    color: {{ block.settings.bonus_text_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-product-features-item-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .ai-product-features-item-{{ ai_gen_id }}.reverse {
+      direction: ltr;
+    }
+
+    .ai-product-features-content-{{ ai_gen_id }} {
+      padding: 0;
+    }
+
+    .ai-product-features-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-product-features-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.85);
+    }
+
+    .ai-product-features-bonus-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.bonus_heading_size }}px * 0.85);
+    }
+
+    .ai-product-features-title-wrapper-{{ ai_gen_id }} {
+      gap: 8px;
+    }
+  }
+{% endstyle %}
+
+<product-features-{{ ai_gen_id }} class="ai-product-features-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-product-features-container-{{ ai_gen_id }}">
+    {% for i in (1..10) %}
+      {% liquid
+        assign feature_enabled_key = 'feature_' | append: i | append: '_enabled'
+        assign feature_image_key = 'feature_' | append: i | append: '_image'
+        assign feature_video_key = 'feature_' | append: i | append: '_video'
+        assign feature_number_key = 'feature_' | append: i | append: '_number'
+        assign feature_heading_key = 'feature_' | append: i | append: '_heading'
+        assign feature_description_key = 'feature_' | append: i | append: '_description'
+
+        assign feature_enabled = block.settings[feature_enabled_key]
+        assign feature_image = block.settings[feature_image_key]
+        assign feature_video = block.settings[feature_video_key]
+        assign feature_number = block.settings[feature_number_key]
+        assign feature_heading = block.settings[feature_heading_key]
+        assign feature_description = block.settings[feature_description_key]
+
+        assign is_even = i | modulo: 2
+      %}
+
+      {% if feature_enabled %}
+        <div class="ai-product-features-item-{{ ai_gen_id }} {% if is_even == 0 %}reverse{% endif %}">
+          <div class="ai-product-features-image-wrapper-{{ ai_gen_id }}">
+            {% if feature_video %}
+              {{
+                feature_video
+                | video_tag:
+                  image_size: '800x',
+                  autoplay: true,
+                  loop: true,
+                  muted: true,
+                  controls: true,
+                  class: 'ai-product-features-video-' | append: ai_gen_id
+              }}
+            {% elsif feature_image %}
+              <img
+                src="{{ feature_image | image_url: width: 800 }}"
+                alt="{{ feature_heading | escape }}"
+                loading="lazy"
+                width="{{ feature_image.width }}"
+                height="{{ feature_image.height }}"
+                class="ai-product-features-image-{{ ai_gen_id }}"
+              >
+            {% else %}
+              <div class="ai-product-features-image-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+                <div class="ai-product-features-placeholder-message-{{ ai_gen_id }}">
+                  {% if i == 1 %}
+                    Add a video or image for Feature {{ i }}
+                  {% else %}
+                    Add an image for Feature {{ i }}
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="ai-product-features-content-{{ ai_gen_id }}">
+            {% if feature_number != blank or feature_heading != blank %}
+              <div class="ai-product-features-title-wrapper-{{ ai_gen_id }}">
+                {% if feature_number != blank %}
+                  <span class="ai-product-features-number-{{ ai_gen_id }}">{{ feature_number }}</span>
+                {% endif %}
+                {% if feature_heading != blank %}
+                  <h3 class="ai-product-features-heading-{{ ai_gen_id }}">{{ feature_heading }}</h3>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if feature_description != blank %}
+              <div class="ai-product-features-description-{{ ai_gen_id }}">{{ feature_description }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% if block.settings.show_image_grid %}
+      <div class="ai-product-features-grid-{{ ai_gen_id }}">
+        {% for i in (1..4) %}
+          {% liquid
+            assign grid_image_key = 'grid_image_' | append: i
+            assign grid_image = block.settings[grid_image_key]
+          %}
+
+          <div class="ai-product-features-grid-item-{{ ai_gen_id }}">
+            {% if grid_image %}
+              <img
+                src="{{ grid_image | image_url: width: 400 }}"
+                alt="Step {{ i }}"
+                loading="lazy"
+                width="{{ grid_image.width }}"
+                height="{{ grid_image.height }}"
+                class="ai-product-features-grid-image-{{ ai_gen_id }}"
+              >
+            {% else %}
+              <div class="ai-product-features-grid-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_testimonial_grid %}
+      <div class="ai-product-features-grid-{{ ai_gen_id }}">
+        {% for i in (1..3) %}
+          {% liquid
+            assign testimonial_image_key = 'testimonial_image_' | append: i
+            assign testimonial_image = block.settings[testimonial_image_key]
+          %}
+
+          <div class="ai-product-features-grid-item-{{ ai_gen_id }}">
+            {% if testimonial_image %}
+              <img
+                src="{{ testimonial_image | image_url: width: 400 }}"
+                alt="Testimonial {{ i }}"
+                loading="lazy"
+                width="{{ testimonial_image.width }}"
+                height="{{ testimonial_image.height }}"
+                class="ai-product-features-grid-image-{{ ai_gen_id }}"
+              >
+            {% else %}
+              <div class="ai-product-features-grid-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_bonus %}
+      <div class="ai-product-features-bonus-{{ ai_gen_id }}">
+        {% if block.settings.bonus_badge %}
+          <img
+            src="{{ block.settings.bonus_badge | image_url: width: 200 }}"
+            alt="{{ block.settings.bonus_heading | escape }}"
+            loading="lazy"
+            width="{{ block.settings.bonus_badge.width }}"
+            height="{{ block.settings.bonus_badge.height }}"
+            class="ai-product-features-bonus-badge-{{ ai_gen_id }}"
+          >
+        {% else %}
+          <div class="ai-product-features-bonus-placeholder-{{ ai_gen_id }}">
+            {{ 'image' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.bonus_heading != blank %}
+          <h3 class="ai-product-features-bonus-heading-{{ ai_gen_id }}">{{ block.settings.bonus_heading }}</h3>
+        {% endif %}
+        {% if block.settings.bonus_text != blank %}
+          <div class="ai-product-features-bonus-text-{{ ai_gen_id }}">{{ block.settings.bonus_text }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</product-features-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductFeatures{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('product-features-{{ ai_gen_id }}', ProductFeatures{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product features",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "Space between items",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Gap between image and text",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "label": "Number size",
+      "min": 14,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#121212"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "Feature 1"
+    },
+    {
+      "type": "paragraph",
+      "content": "Feature 1 supports video. Upload a video below to show it instead of an image."
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_1_enabled",
+      "label": "Enable feature 1",
+      "default": true
+    },
+    {
+      "type": "video",
+      "id": "feature_1_video",
+      "label": "Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_1_image",
+      "label": "Image (fallback if no video)"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_number",
+      "label": "Number",
+      "default": "1."
+    },
+    {
+      "type": "text",
+      "id": "feature_1_heading",
+      "label": "Heading",
+      "default": "Keeps food fresh longer"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_1_description",
+      "label": "Description",
+      "default": "<p>Advanced airtight seal technology locks in freshness and prevents spoilage, saving you money on groceries.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_2_enabled",
+      "label": "Enable feature 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_2_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_number",
+      "label": "Number",
+      "default": "2."
+    },
+    {
+      "type": "text",
+      "id": "feature_2_heading",
+      "label": "Heading",
+      "default": "Space-saving design"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_2_description",
+      "label": "Description",
+      "default": "<p>Stackable containers maximize your storage space and keep your kitchen organized and clutter-free.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_3_enabled",
+      "label": "Enable feature 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_3_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_number",
+      "label": "Number",
+      "default": "3."
+    },
+    {
+      "type": "text",
+      "id": "feature_3_heading",
+      "label": "Heading",
+      "default": "Microwave and dishwasher safe"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_3_description",
+      "label": "Description",
+      "default": "<p>Heat up leftovers directly in the container and clean up is a breeze with dishwasher-safe materials.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_4_enabled",
+      "label": "Enable feature 4",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_4_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_number",
+      "label": "Number",
+      "default": "4."
+    },
+    {
+      "type": "text",
+      "id": "feature_4_heading",
+      "label": "Heading",
+      "default": "BPA-free materials"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_4_description",
+      "label": "Description",
+      "default": "<p>Made from premium food-grade materials that are completely safe for you and your family.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_5_enabled",
+      "label": "Enable feature 5",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_5_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_5_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_number",
+      "label": "Number",
+      "default": "5."
+    },
+    {
+      "type": "text",
+      "id": "feature_5_heading",
+      "label": "Heading",
+      "default": "Crystal clear visibility"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_5_description",
+      "label": "Description",
+      "default": "<p>See exactly what's inside without opening the container, making meal prep and organization effortless.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_6_enabled",
+      "label": "Enable feature 6",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_6_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_6_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_6_number",
+      "label": "Number",
+      "default": "6."
+    },
+    {
+      "type": "text",
+      "id": "feature_6_heading",
+      "label": "Heading",
+      "default": "Leak-proof guarantee"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_6_description",
+      "label": "Description",
+      "default": "<p>Take your meals anywhere with confidence. Our secure locking system prevents spills and leaks.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_7_enabled",
+      "label": "Enable feature 7",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_7_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_7_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_7_number",
+      "label": "Number",
+      "default": "7."
+    },
+    {
+      "type": "text",
+      "id": "feature_7_heading",
+      "label": "Heading",
+      "default": "Portion control made easy"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_7_description",
+      "label": "Description",
+      "default": "<p>Multiple size options help you manage portions perfectly for healthier eating habits.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 8"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_8_enabled",
+      "label": "Enable feature 8",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_8_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_8_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_8_number",
+      "label": "Number",
+      "default": "8."
+    },
+    {
+      "type": "text",
+      "id": "feature_8_heading",
+      "label": "Heading",
+      "default": "Freezer friendly"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_8_description",
+      "label": "Description",
+      "default": "<p>Store prepared meals for weeks. Our containers withstand extreme temperatures without cracking.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 9"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_9_enabled",
+      "label": "Enable feature 9",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_9_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_9_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_9_number",
+      "label": "Number",
+      "default": "9."
+    },
+    {
+      "type": "text",
+      "id": "feature_9_heading",
+      "label": "Heading",
+      "default": "Eco-friendly choice"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_9_description",
+      "label": "Description",
+      "default": "<p>Reduce waste and save the planet. Reusable containers eliminate the need for disposable plastic bags.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 10"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_10_enabled",
+      "label": "Enable feature 10",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_10_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "feature_10_video",
+      "label": "Video (optional)"
+    },
+    {
+      "type": "text",
+      "id": "feature_10_number",
+      "label": "Number",
+      "default": "10."
+    },
+    {
+      "type": "text",
+      "id": "feature_10_heading",
+      "label": "Heading",
+      "default": "Built to last"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_10_description",
+      "label": "Description",
+      "default": "<p>Premium construction ensures years of reliable use. This is the last food storage set you'll ever need.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Image grid"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_grid",
+      "label": "Show image grid",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "grid_columns",
+      "label": "Grid columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "image_picker",
+      "id": "grid_image_1",
+      "label": "Grid image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "grid_image_2",
+      "label": "Grid image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "grid_image_3",
+      "label": "Grid image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "grid_image_4",
+      "label": "Grid image 4"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial grid"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_testimonial_grid",
+      "label": "Show testimonial grid",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "testimonial_image_1",
+      "label": "Testimonial image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "testimonial_image_2",
+      "label": "Testimonial image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "testimonial_image_3",
+      "label": "Testimonial image 3"
+    },
+    {
+      "type": "header",
+      "content": "Bonus section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bonus",
+      "label": "Show bonus section",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "bonus_badge",
+      "label": "Badge image"
+    },
+    {
+      "type": "range",
+      "id": "bonus_badge_size",
+      "label": "Badge size",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "text",
+      "id": "bonus_heading",
+      "label": "Heading",
+      "default": "Bonus: Lifetime Warranty"
+    },
+    {
+      "type": "richtext",
+      "id": "bonus_text",
+      "label": "Text",
+      "default": "<p>We stand behind our product 100%. If anything goes wrong, we'll replace it for free. No questions asked.</p>"
+    },
+    {
+      "type": "color",
+      "id": "bonus_bg_color",
+      "label": "Background color",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "range",
+      "id": "bonus_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "bonus_padding",
+      "label": "Padding",
+      "min": 20,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "bonus_heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "bonus_heading_color",
+      "label": "Heading color",
+      "default": "#121212"
+    },
+    {
+      "type": "range",
+      "id": "bonus_text_size",
+      "label": "Text size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "bonus_text_color",
+      "label": "Text color",
+      "default": "#121212"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product features"
+    }
+  ]
+}
+{% endschema %}

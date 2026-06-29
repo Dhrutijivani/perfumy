@@ -1,0 +1,141 @@
+<div class="story-strip-background-container">
+<div class="story-strip-container">
+  {% if section.settings.title != blank %}
+    <h2 class="story-strip-title">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  <div class="story-strip-grid">
+    {% for block in section.blocks %}
+      <div class="story-strip-item" {{ block.shopify_attributes }}>
+        <div class="story-strip-image-wrapper">
+          {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | image_url: width: 600 }}" 
+                 alt="{{ block.settings.image.alt }}" 
+                 loading="lazy">
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+        <p class="story-strip-label">{{ block.settings.label }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+</div>
+<style>
+    .story-strip-background-container{
+      background-color:rgb(221, 221, 215);
+    }
+  .story-strip-container {
+    padding: 40px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+     font-family: "Iosevka Charon", monospace;
+      
+  }
+  .story-strip-title {
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 30px;
+    color:#513431;
+    font-family: "Iosevka Charon", monospace;
+  }
+  .story-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  .story-strip-image-wrapper {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px; 
+    margin-bottom: 15px;
+  }
+  .story-strip-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .story-strip-image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+  .story-strip-label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  /* Responsive for Mobile */
+  @media (max-width: 768px) {
+    .story-strip-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
+
+ @media (max-width: 425px) {
+  .story-strip-title {
+    font-size: 23px;
+  }
+.story-strip-label {
+    font-size: 15px;
+}
+.story-strip-image-wrapper {
+    margin-bottom: 0;
+}
+.story-strip-label {
+    margin: 0;
+}
+.story-strip-container {
+    padding: 10px 20px;
+}
+
+}
+
+</style>
+
+
+
+
+{% schema %}
+{
+  "name": "Story Strip Journey",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Story-strip journey"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Journey Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Step Image"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Step Label",
+          "default": "Step Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Story Strip Journey",
+     
+    }
+  ]
+}
+{% endschema %}

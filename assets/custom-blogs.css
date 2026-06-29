@@ -1,0 +1,263 @@
+.section-template--26862665302297__main-padding .blog-articles.blog-articles--collage {
+    display: flex;
+    gap: 40px;
+ 
+}
+
+/* left sidebar */
+ .section-template--26862665302297__main-padding .hello {
+    flex: 0 0 30%;
+       font-family: "Iosevka Charon", monospace !important;
+}
+
+/* right container (IMPORTANT) */
+ .section-template--26862665302297__main-padding .blog-articles__wrapper {
+    flex: 0 0 70%;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+       font-family: "Iosevka Charon", monospace !important;
+}
+ .section-template--26862665302297__main-padding {
+            max-width: 1400px !important;
+            max-width:100%;
+        margin: 0 auto;
+        padding: 0;
+            overflow: hidden;
+}
+
+
+.blogs-page-main-container{
+        font-size: 40px;
+        text-align: center;
+        font-weight: 600;
+        color:rgb(172, 125, 117);
+         font-family: "Iosevka Charon", monospace !important;
+             padding-bottom: 30px;
+}
+
+section#shopify-section-template--26862665302297__main {
+    background-color: rgb(236, 236, 226);
+}
+
+
+
+.custom-shop-container {
+   font-family: "Iosevka Charon", monospace !important;
+    max-width: 400px;
+            padding-left: 30px;
+            width: 100%;
+    margin: 0 auto;
+
+  }
+
+  /* Main Button Styling */
+  .shop-btn {
+    display: inline-block;
+    background-color: #b5837a; 
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: opacity 0.3s ease;
+  }
+
+  .shop-btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Tags Section Styling */
+  .tags-title {
+    font-size: 29px;
+    color:black;
+    margin-bottom: 15px;
+    font-weight: 500;
+    display: flex;
+      font-family: "Iosevka Charon", monospace !important;
+
+  }
+
+  .tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag-item {
+    background-color: #f6f1ee; 
+    color: black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration:none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .tag-item:hover {
+    background-color: #ede4de;
+  }
+
+  .card .card__inner .card__media {
+    border-radius: 30px !important;
+}
+.card--card.gradient, .card__inner.gradient {
+    border-radius: 30px !important;
+}
+
+    .section-template--26862665302297__main-padding {
+        padding-top: 36px;
+        padding-left: 30px;
+        padding-bottom: 36px;
+        padding-right: 30px;
+    }
+
+@media (max-width: 768px) {
+
+   .section-template--26862665302297__main-padding .blog-articles.blog-articles--collage {
+    display: block !important;
+}
+.blogs-page-main-container {
+    font-size: 27px;
+}
+.tags-wrapper {
+    margin-bottom: 44px;
+}
+}
+
+
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .blogs-page-main-container {
+    font-size: 16px;
+}
+.shop-btn {
+    padding: 8px 13px;
+   font-size: 16px;
+}
+.tags-title {
+    font-size: 24px;
+}
+.tag-item {
+    font-size: 12px;
+}
+}
+
+
+
+
+/* blog detail page*/
+section#shopify-section-template--26862665269529__main {
+    background-color:  #f6f1ee;
+}
+
+
+
+.article-template__content{
+max-width: 1300px;
+        width: 100%;
+        margin: 0 auto;
+        font-family: "Iosevka Charon", monospace !important;
+}
+.article-template__content{
+     font-size: 25px;
+}
+
+
+  .article-template__content.page-width.page-width--narrow.rte.scroll-trigger.animate--slide-in img{
+     height: 500px;   
+    width: 426px;
+   
+  } 
+   .article-template .article-template__hero-medium {
+        height: 55rem;
+        border-radius: 30px;
+    }
+  
+   .article-template__hero-container {
+    padding-top: 50px;
+   }
+   .article-template__title {
+ font-family: "Iosevka Charon", monospace !important;
+     font-weight: 600;
+   }
+   .caption-with-letter-spacing {
+    font-size: 20px;
+   }
+  .scroll-trigger:not(.scroll-trigger--offscreen).animate--fade-in {
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+            padding-top: 82px;
+   }
+   .article-template__social-sharing.page-width.page-width--narrow.scroll-trigger.animate--slide-in {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.share-button__button {
+    color: red;   
+}
+a.article-template__link.link.animate-arrow {
+padding-bottom: 100px;
+    font-weight: 900;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+ .article-template .article-template__content {
+       padding: 0 25px;
+  }
+.scroll-trigger:not(.scroll-trigger--offscreen).animate--fade-in  {
+      padding: 20px 25px 10px 25px;
+}
+share-button#Share-template--26862665269529__main {
+  padding: 0 25px;
+}
+
+ .article-template .article-template__title {
+    font-size: 30px;
+}
+.article-template .caption-with-letter-spacing {
+      font-size: 16px;
+}
+.article-template__social-sharing.page-width.page-width--narrow.scroll-trigger.animate--slide-in {
+    padding: 0;
+}
+.article-template__content {
+    font-size: 18px;
+}
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+ .article-template .article-template__title {
+    font-size: 20px;
+}
+.article-template .caption-with-letter-spacing {
+    font-size: 13px;
+}
+.article-template__content {
+    font-size: 14px;
+}
+.scroll-trigger:not(.scroll-trigger--offscreen).animate--fade-in {
+    padding-top: 23px;
+}
+
+
+
+
+
+.article-template .article-template__hero-medium {
+    height: 225px;
+}
+.article-template__hero-container {
+          padding: 0px 15px;
+}
+
+
+
+}

@@ -1,0 +1,272 @@
+<div class="hotspot-container">
+
+  <!-- ✅ MAIN IMAGE -->
+  
+  {% if section.settings.main_image != blank %}
+    
+   <div class="hotspot-image-container">
+    <img 
+      src="{{ section.settings.main_image | image_url }}" 
+      class="hotspot-image"
+      alt="Hotspot Image"
+   />
+      </div>
+  {% endif %}
+
+  <!-- ✅ HOTSPOTS -->
+  {% for block in section.blocks %}
+    {% assign product = all_products[block.settings.product] %}
+
+    <div class="hotspot"
+         style="top: {{ block.settings.top }}%; left: {{ block.settings.left }}%;">
+      
+      <!-- ICON -->
+      <div class="hotspot-icon" onclick="togglePopup(this)">
+        +
+      </div>
+
+      <!-- POPUP -->
+      <div class="popup">
+        <div class="pop-up-info-container">
+           <div>
+             <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | image_url }}" />
+           </div>
+         <div>
+           <h4>{{ product.title }}</h4>
+           <p>{{ product.price | money }}</p>
+          
+         </div>
+         </a>
+         </div>
+      </div>
+
+      </div>
+  {% endfor %}
+
+</div>
+
+
+
+<style>
+  .hotspot-image-container {
+    position: relative;
+  width: 100%;
+  aspect-ratio: 30 / 9; 
+  overflow: hidden;
+
+  }
+   .hotspot-image-container img{
+   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+
+.hotspot-container {
+  position: relative;
+  width: 100%;
+  margin-bottom:38px;
+}
+
+.hotspot-image {
+  width: 100%;
+  display: block;
+}
+
+
+.hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+/* ICON STYLE */
+.hotspot-icon {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: pulse 1.5s infinite;
+}
+
+/* PULSE EFFECT */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.3); }
+  70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+}
+
+/* POPUP */
+.popup {
+  display: none; 
+  position: absolute;
+  top: -20px;
+  left: 40px;
+  background: #f5f5f5;
+  padding: 16px;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  gap: 12px;
+  align-items: center;
+}
+.pop-up-info-container {
+    display: flex;   
+}
+.pop-up-info-container a{
+    text-decoration: none;
+}
+
+/* Arrow (triangle pointer) */
+.popup::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #f5f5f5;
+}
+
+/* Image */
+.popup img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Text area */
+.popup h4 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.popup p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.hotspot-image-container {
+  aspect-ratio: 18 / 9; 
+  }
+  .hotspot-container {
+    margin-bottom: 27px;
+}
+.popup {
+  width: 200px;
+}
+.popup h4 {
+    font-size: 10px;
+}
+}
+
+
+@media (max-width: 425px) {
+  .hotspot-container {
+    margin-bottom: 21px;
+}
+.pop-up-info-container {
+    display: block;    
+}
+.popup img {
+  width: 50px;
+  height: 50px;
+}
+.popup {
+  width: 80px;
+  height:80px;
+}
+.popup p , h4{
+display:none;
+}
+
+.hotspot-icon {
+    width: 13px;
+    height: 13px;
+    font-size: 12px;
+}
+
+}
+
+
+
+</style>
+
+
+
+<script>
+function togglePopup(el) {
+  let popup = el.nextElementSibling;
+
+  // Close all popups first
+  document.querySelectorAll('.popup').forEach(p => {
+    if (p !== popup) p.style.display = 'none';
+  });
+
+  // Toggle current popup
+  popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+
+{% schema %}
+{
+  "name": "Hotspot Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hotspot",
+      "name": "Hotspot",
+      "settings": [
+        {
+          "type": "range",
+          "id": "top",
+          "label": "Top Position (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "left",
+          "label": "Left Position (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hotspot Section"
+    }
+  ]
+}
+{% endschema %}
+
+
+

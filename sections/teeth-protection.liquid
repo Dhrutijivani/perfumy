@@ -1,0 +1,201 @@
+<section class="teeth-protection">
+  <div class="container">
+    
+    
+    <h1 class="section-heading">
+      {{ section.settings.heading }}
+    </h1>
+
+   
+    <p class="section-subheading">
+      {{ section.settings.subheading }}
+    </p>
+
+  
+    <div class="features">
+      {% for block in section.blocks %}
+        <div class="feature-item">
+
+  <div class="icon">
+    {{ block.settings.custom_html }}
+  </div>
+
+  <div class="feature-title">
+   <p>{{ block.settings.title }}</p> 
+  </div>
+
+  <div class="feature-text">
+  <p> {{ block.settings.text }}</p> 
+  </div>
+
+</div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.teeth-protection {
+  text-align: center;
+  padding: 100px 0;
+  background: #f9f9f9;
+  margin-top:70px;
+      font-family: "Jost", sans-serif ;
+}
+
+.container{
+ width:100%;
+ max-width:1240px;
+ margin:0 auto;
+ padding:0 15px;
+
+}
+
+.section-heading {
+  font-size: 40px;
+  font-weight: 700;
+  color:#103178;
+  margin:0;
+  padding:0;
+  font-family: "Jost", sans-serif ;
+}
+
+.section-subheading {
+  font-size: 25px;
+  color: #103178;
+     margin: 0;
+
+}
+
+.features {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+      margin-top: 48px;
+}
+
+.feature-item {
+  max-width: 412px;
+}
+
+.feature-item .icon img {
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  font-size: 18px;
+  color: #1a3c6e;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 14px;
+  color: #666;
+}
+.metafield-rich_text_field p{
+    margin: 0;
+}
+.feature-title p{
+font-size:22px;
+font-weight: 500;
+color:#103178;
+ line-height:26px;
+}
+.feature-text p{
+margin:20px 0 0;
+color: #103178;
+}
+
+
+
+@media (max-width: 425px) {
+  .features {
+  display:flex;
+      flex-direction: column;      
+}
+ .section-heading {
+    font-size: 26px;
+
+}
+.section-subheading{
+font-size: 20px;
+    line-height: 35px;
+
+}
+.feature-item{
+padding: 17px 15px;
+}
+   .teeth-protection {
+   margin-top:0px;
+   }
+  .feature-title p{
+     font-size: 21px;
+     line-height:24px;
+  }
+ .teeth-protection {
+ 
+  padding: 50px 0; 
+ }
+}
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Teeth Protection Section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      
+    },
+
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "The brush handle fits perfectly in the hand, is slim and beautifully made."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+         
+        },
+            {
+  "type": "html",
+  "id": "custom_html",
+  "label": "Custom HTML"
+},
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": "Feature description goes here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Teeth Protection",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
+    }
+  ]
+}
+{% endschema %}
