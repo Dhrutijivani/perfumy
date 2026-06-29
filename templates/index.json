@@ -59,6 +59,17 @@
         "button_link": ""
       }
     },
+    "custom_perfume_text_Ppe9qp": {
+      "type": "custom-perfume-text",
+      "name": "Perfume Simple Text",
+      "settings": {
+        "sub_heading": "Elegance in a Bottle",
+        "heading": "Crafted for the Modern Connoisseur",
+        "description": "<p>Experience a sophisticated blend of rare oud, French lavender, and warm amber notes designed to leave an unforgettable impression.</p>",
+        "alignment": "center",
+        "bg_color": "#ffffff"
+      }
+    },
     "hero_slider_aEwJ3M": {
       "type": "Hero-slider",
       "blocks": {
@@ -541,23 +552,13 @@
         "ai_gen_block_aca0490_i6FkQc"
       ],
       "settings": {}
-    },
-    "custom_perfume_text_Ppe9qp": {
-      "type": "custom-perfume-text",
-      "name": "Perfume Simple Text",
-      "settings": {
-        "sub_heading": "Elegance in a Bottle",
-        "heading": "Crafted for the Modern Connoisseur",
-        "description": "<p>Experience a sophisticated blend of rare oud, French lavender, and warm amber notes designed to leave an unforgettable impression.</p>",
-        "alignment": "center",
-        "bg_color": "#ffffff"
-      }
     }
   },
   "order": [
-    "hotspot_section_3xzAeg",
     "custom_perfume_showcase_qpBkHc",
+    "custom_perfume_text_Ppe9qp",
     "hero_slider_aEwJ3M",
+    "hotspot_section_3xzAeg",
     "featured_collection_qrLjcE",
     "perfume_comparison_TGenwY",
     "video_slider_VbQc9k",
@@ -574,7 +575,6 @@
     "177554606992247901",
     "17755528149240e0dc",
     "17755572314e0dddeb",
-    "177555808575db8a1e",
-    "custom_perfume_text_Ppe9qp"
+    "177555808575db8a1e"
   ]
 }
