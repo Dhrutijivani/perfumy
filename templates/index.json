@@ -1,1 +1,568 @@
-{"sections":{"hotspot_section_3xzAeg":{"type":"hotspot-section","blocks":{"hotspot_jh6tMC":{"type":"hotspot","settings":{"top":67,"left":68,"product":"perfume-13"}},"hotspot_GjN7Ez":{"type":"hotspot","settings":{"top":66,"left":33,"product":"perfume-4"}},"hotspot_4trBRT":{"type":"hotspot","settings":{"top":60,"left":50,"product":"perfume-14"}}},"block_order":["hotspot_jh6tMC","hotspot_GjN7Ez","hotspot_4trBRT"],"name":"Hotspot Section","settings":{"main_image":"shopify:\/\/shop_images\/Gemini_Generated_Image_c2qsldc2qsldc2qs.png"}},"hero_slider_aEwJ3M":{"type":"Hero-slider","blocks":{"hero_slider_KpxCPC":{"type":"hero_slider","settings":{"block_image":"shopify:\/\/shop_images\/main-banner-02_fd625424-864c-4990-beae-97723806d15a.webp","heading":"Natural Perfume","sub_heading":"Strong Fragrance Perfume","pera":"Phasellus condimentum, elit eu sagittis ullamcorper, mauris enim interdum quam.","btn_text":"Discover Now","btn_url":"","layout":"left"}},"hero_slider_RBCYPE":{"type":"hero_slider","settings":{"block_image":"shopify:\/\/shop_images\/Gemini_Generated_Image_ibf2miibf2miibf2_fe06d8c4-0fc6-428f-93da-aa76a1a8546f.png","heading":"Fragrance of Love!","sub_heading":"Perfume make day special","pera":"Phasellus condimentum, elit eu sagittis ullamcorper, mauris eniminterdum quam, et efficitur ex nisl ut ante.","btn_text":"Discover Now","btn_url":"","layout":"right"}}},"block_order":["hero_slider_KpxCPC","hero_slider_RBCYPE"],"name":"Hero-Slider","settings":{}},"featured_collection_qrLjcE":{"type":"featured-collection","name":"t:sections.featured-collection.presets.name","settings":{"collection":"fresh-daily-wear-collection","products_to_show":5,"title":"Featured collection","heading_size":"h1","description":"","show_description":false,"description_style":"body","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"solid","color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"perfume_comparison_TGenwY":{"type":"perfume-comparison","name":"Before After Comparison","settings":{"image_before":"shopify:\/\/shop_images\/Gemini_Generated_Image_9b4fem9b4fem9b4f.png","image_after":"shopify:\/\/shop_images\/Gemini_Generated_Image_nmv5djnmv5djnmv5.png","heading":"The Essence of Unforgettable Presence","subtext":"The Art of Scent — Individual Notes become an Unforgettable Journey","button_label":"Discover Now","button_link":"shopify:\/\/pages\/the-essence-of-unforgettable-presence-the-art-of-scent","padding_top":40,"padding_bottom":40}},"video_slider_VbQc9k":{"type":"video-slider","blocks":{"video_FbjhRG":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/videoplayback (4).mp4"}},"video_dcbayF":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/videoplayback (2).mp4"}},"video_qxERQw":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/videoplayback.mp4"}},"video_pdTErP":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/videoplayback (3).mp4"}},"video_Dgp8mX":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/videoplayback (1).mp4"}}},"block_order":["video_FbjhRG","video_dcbayF","video_qxERQw","video_pdTErP","video_Dgp8mX"],"name":"Video Slider","settings":{}},"single_video_m78n4p":{"type":"single-video","name":"Single Video","settings":{"video":"shopify:\/\/files\/videos\/1704718-hd_1920_1080_30fps.mp4","cover_image":"shopify:\/\/shop_images\/product-jpeg.jpg"}},"collection_slider_XJRWM9":{"type":"collection-slider","name":"collection-slider","settings":{}},"testimonial_7CT3d7":{"type":"testimonial","blocks":{"testimonial_LWLFiN":{"type":"testimonial","settings":{"image":"shopify:\/\/shop_images\/testimonial-user-1.webp","name":"Zephyr Storm","designation":"Exo-Botanist","review":"\"Absolutely enchanted by the exquisite scents at Fragrant. Each fragrance tells a story, and I've found my signature scent that's as unique as it is captivating!\""}},"testimonial_UjA87F":{"type":"testimonial","settings":{"image":"shopify:\/\/shop_images\/testimonial-user-2.webp","name":"Esme Starlight","designation":"Quantum Analyst","review":"\"I'm a loyal customer of Fragrant because their curated collection never fails to surprise and delight. Every purchase feels like unlocking a new olfactory adventure!\""}},"testimonial_8qC3kE":{"type":"testimonial","settings":{"image":"shopify:\/\/shop_images\/testimonial-user-3.webp","name":"Apollo Frost","designation":"Exoplanet Explorer","review":"\"Absolutely enchanted by the exquisite scents at Fragrant. Each fragrance tells a story, and I've found my signature scent that's as unique as it is captivating!\""}},"testimonial_JX4naD":{"type":"testimonial","settings":{"image":"shopify:\/\/shop_images\/testimonial-user-4.webp","name":"Felix Ember","designation":"Martian Agronomist","review":"\"I'm a loyal customer of Fragrant because their curated collection never fails to surprise and delight. Every purchase feels like unlocking a new olfactory adventure!\""}}},"block_order":["testimonial_LWLFiN","testimonial_UjA87F","testimonial_8qC3kE","testimonial_JX4naD"],"name":"Testimonials","settings":{"heading":"TESTIMONIALS"}},"metaobjects_custom_hero_banner_i4hia7":{"type":"metaobjects-custom-hero-banner","name":"Metaobject Section","settings":{}},"multi_colum_custom_7kBe6R":{"type":"multi-colum-custom","blocks":{"multi_column_card_Lp7Qkh":{"type":"multi_column_card","settings":{"column_image_round":"shopify:\/\/shop_images\/user-01.webp","column_heading":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna sed lectus iaculis fringilla. In eu ligula efficitur,","column_text":"Meka don","column_text_2":"Developer"}},"multi_column_card_HKemTX":{"type":"multi_column_card","settings":{"column_image_round":"shopify:\/\/shop_images\/user-02.webp","column_heading":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna sed lectus iaculis fringilla. In eu ligula efficitur,","column_text":"Meka don","column_text_2":"Developer"}},"multi_column_card_NdKcUe":{"type":"multi_column_card","settings":{"column_image_round":"shopify:\/\/shop_images\/user-03.webp","column_heading":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna sed lectus iaculis fringilla. In eu ligula efficitur,","column_text":"Meka don","column_text_2":"Developer"}}},"block_order":["multi_column_card_Lp7Qkh","multi_column_card_HKemTX","multi_column_card_NdKcUe"],"name":"Multi Column","settings":{}},"teeth_protection_Nciwbn":{"type":"teeth-protection","blocks":{"feature_J6hwfX":{"type":"feature","settings":{"title":"{{ metaobjects.teeth_block[\"the-highest-quality-and-protection-for-your-teeth\"].text | metafield_tag }}","custom_html":"<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M45 2.95996H3V33.5H45V2.95996Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"><\/path><path d=\"M33.5403 33.5001C36.6994 33.5001 39.2603 30.9391 39.2603 27.7801C39.2603 24.621 36.6994 22.0601 33.5403 22.0601C30.3812 22.0601 27.8203 24.621 27.8203 27.7801C27.8203 30.9391 30.3812 33.5001 33.5403 33.5001Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"><\/path><path d=\"M29.7197 33.5H37.3597V43.04L33.5397 41.14L29.7197 43.04V33.5Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"><\/path><path d=\"M10.6406 12.5H37.3606\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"><\/path><path d=\"M10.6406 22.04H24.0006\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"><\/path> <\/svg>","text":"{{ metaobjects.teeth_block[\"the-highest-quality-and-protection-for-your-teeth\"].sub_text.value }}"}},"feature_xqEYCw":{"type":"feature","settings":{"title":"{{ metaobjects.teeth_block[\"at-the-same-time-it-protects-and-whitens\"].text | metafield_tag }}","custom_html":"<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M46.5423 28.8001C46.5936 27.1463 45.987 25.5397 44.8555 24.3325C43.724 23.1253 42.16 22.416 40.5063 22.3601C39.6611 22.3676 38.8274 22.5584 38.063 22.9192C37.2985 23.28 36.6214 23.8023 36.0783 24.4501C35.5357 23.8023 34.859 23.2799 34.0949 22.919C33.3307 22.5582 32.4974 22.3675 31.6523 22.3601C29.9985 22.4154 28.4342 23.1246 27.3026 24.3319C26.171 25.5392 25.5646 27.1462 25.6163 28.8001C25.7763 31.2753 26.621 33.6573 28.0563 35.6801C28.2191 35.9072 28.3211 36.1721 28.3526 36.4497C28.3841 36.7273 28.3441 37.0083 28.2363 37.2661C27.562 38.9221 27.2189 40.6941 27.2263 42.4821V44.4941C27.2263 45.0277 27.4383 45.5395 27.8156 45.9168C28.193 46.2941 28.7047 46.5061 29.2383 46.5061C29.772 46.5061 30.2837 46.2941 30.661 45.9168C31.0384 45.5395 31.2503 45.0277 31.2503 44.4941C31.1877 43.2011 31.6289 41.9343 32.4812 40.96C33.3336 39.9857 34.5305 39.3799 35.8203 39.2701C36.5098 39.2338 37.1991 39.3451 37.842 39.5967C38.4849 39.8483 39.0667 40.2343 39.5484 40.7288C40.0301 41.2234 40.4007 41.8152 40.6352 42.4646C40.8697 43.1139 40.9628 43.8059 40.9083 44.4941C40.9083 45.0277 41.1203 45.5395 41.4976 45.9168C41.875 46.2941 42.3867 46.5061 42.9203 46.5061C43.454 46.5061 43.9657 46.2941 44.343 45.9168C44.7204 45.5395 44.9323 45.0277 44.9323 44.4941V42.4761C44.9413 40.5761 44.553 38.6952 43.7923 36.9541C43.6628 36.6904 43.6061 36.3969 43.6283 36.1039C43.6504 35.811 43.7506 35.5293 43.9183 35.2881C45.4079 33.4281 46.3201 31.1726 46.5423 28.8001V28.8001Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><path d=\"M4.91406 1.65234L25.121 7.67707L21.7901 18.8491C21.7143 19.1032 21.5407 19.3169 21.3074 19.443C21.0741 19.5692 20.8002 19.5975 20.5461 19.5217L2.25571 14.0684C2.00155 13.9926 1.7879 13.819 1.66177 13.5857C1.53563 13.3524 1.50734 13.0785 1.58312 12.8244L4.91406 1.65234Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><path d=\"M4.91406 1.65796L46.5421 14.068\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><path d=\"M10.5868 12.1499L9.38281 16.1899\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path> <\/svg>","text":"{{ metaobjects.teeth_block[\"at-the-same-time-it-protects-and-whitens\"].sub_text.value }}"}},"feature_iiEbtT":{"type":"feature","settings":{"title":"{{ metaobjects.teeth_block[\"round-rectangular-and-super-wide\"].text | metafield_tag }}","custom_html":"<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M1.5 45.6839L21.676 25.2179C22.3082 24.5855 23.1658 24.2301 24.06 24.2299H28.418C29.3119 24.2303 30.1694 23.8756 30.802 23.2439L46.5 7.54395\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><path d=\"M29.3302 10.4125L37.4506 2.29211C37.6381 2.10457 37.8925 1.99921 38.1577 1.99921C38.4229 1.99921 38.6772 2.10457 38.8648 2.29211L45.3093 8.73668L35.7747 18.2713L29.3302 11.8267C29.1426 11.6392 29.0373 11.3848 29.0373 11.1196C29.0373 10.8544 29.1426 10.6001 29.3302 10.4125V10.4125Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><path d=\"M33.623 6.12012L37.209 9.70812\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path> <\/svg>","text":"{{ metaobjects.teeth_block[\"round-rectangular-and-super-wide\"].sub_text.value }}"}}},"block_order":["feature_J6hwfX","feature_xqEYCw","feature_iiEbtT"],"name":"Teeth Protection","settings":{"heading":"{{ metaobjects.teeth[\"the-brush-handle-fits-perfectly-in-the-hand-is-slim-and-beautifully-made\"].headingg | metafield_tag }}","subheading":"{{ metaobjects.teeth[\"the-brush-handle-fits-perfectly-in-the-hand-is-slim-and-beautifully-made\"].sub_heading.value }}"}},"featured_blog_qhCGWt":{"type":"featured-blog","disabled":true,"name":"t:sections.featured-blog.presets.name","settings":{"blog":"news","post_limit":3,"heading":"Blog posts","heading_size":"h1","columns_desktop":3,"show_view_all":true,"show_image":true,"show_date":true,"show_author":false,"color_scheme":"","padding_top":36,"padding_bottom":36}},"video_slider_mJHCgw":{"type":"video-slider","blocks":{"video_xXETWq":{"type":"video","settings":{}},"video_H96HHa":{"type":"video","settings":{}},"video_7LAwCY":{"type":"video","settings":{}},"video_yPGw7j":{"type":"video","settings":{}},"video_eDCeEF":{"type":"video","settings":{}},"video_mpqMFJ":{"type":"video","settings":{}}},"block_order":["video_xXETWq","video_H96HHa","video_7LAwCY","video_yPGw7j","video_eDCeEF","video_mpqMFJ"],"name":"Video Slider","settings":{}},"17755392007dd75c5a":{"type":"apps","settings":{"include_margins":true}},"17755394299730d804":{"type":"apps","blocks":{"judge_me_reviews_testimonials_carousel_AKXV3p":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/testimonials_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{"show_sample_reviews":true,"reviews_selection":"all","products":[],"star_rating":"all","max_reviews":20,"quote_marks_size":"small","product_name_text_size":"small","verified_badge_style":"icon","card_height":"medium","text_size":"small","stars_size":"medium","arrows_position":"bottom","max_width":1100,"corner_styling":"soft","quote_marks_style":"serif","card_color":"#f9f9f9","stars_and_quote_marks_color":"#108474","text_color":"#000000","arrows_color":"#000000","show_border":false,"border_color":"#108474","show_drop_shadow":false,"transition_speed":5,"header_text":"Customers are saying","show_average_rating":true}}},"block_order":["judge_me_reviews_testimonials_carousel_AKXV3p"],"settings":{"include_margins":true}},"177554606992247901":{"type":"_blocks","settings":{}},"17755528149240e0dc":{"type":"_blocks","blocks":{"ai_gen_block_8ec2798_6wiC3p":{"type":"ai_gen_block_8ec2798","settings":{"text":"Limited Time Offer","button_text":"Get 61% OFF","button_link":"","background_color":"#121212","vertical_padding":12,"spacing":16,"text_color":"#ffffff","text_size":16,"text_weight":"400","button_color":"#cc0000","button_hover_color":"#990000","button_text_color":"#ffffff","button_text_size":14,"button_text_weight":"700","button_radius":20,"button_padding_vertical":8,"button_padding_horizontal":20},"blocks":{}}},"block_order":["ai_gen_block_8ec2798_6wiC3p"],"settings":{}},"17755572314e0dddeb":{"type":"_blocks","blocks":{"ai_gen_block_15c24bb_xyQJxY":{"type":"ai_gen_block_15c24bb","settings":{"product_image":"shopify:\/\/shop_images\/Untitled_design_-_2025-09-23T002912.241_265ad4c6-1008-4c52-996c-1c94cde21ce0.webp","sale_heading":"SALE ENDS SOON","sale_heading_size":24,"sale_heading_color":"#dc2626","countdown_end_date":"2026-04-15","countdown_end_time":"23:59:59","countdown_number_size":28,"countdown_label_size":12,"countdown_bg_color":"#dc2626","countdown_text_color":"#ffffff","countdown_border_radius":8,"product_name":"Premium Product Name","product_name_size":22,"cta_button_text":"GET 61% OFF","cta_button_link":"","cta_font_size":18,"cta_bg_color":"#dc2626","cta_text_color":"#ffffff","cta_border_radius":8,"sellout_risk":"High","guarantee_text":"60-Day Money Back Guarantee!","info_text_size":13,"desktop_width_percent":100,"background_color":"#f3f4f6","text_color":"#1f2937","highlight_color":"#dc2626","border_width":3,"border_color":"#10b981","border_radius":12},"blocks":{}}},"block_order":["ai_gen_block_15c24bb_xyQJxY"],"settings":{}},"177555808575db8a1e":{"type":"_blocks","blocks":{"ai_gen_block_aca0490_i6FkQc":{"type":"ai_gen_block_aca0490","settings":{"text_width_percent":60,"guarantee_text":"60 Day Money Back Guarantee","text_size":26,"text_color":"#121212","button_text":"GET 61% OFF","button_link":"shopify:\/\/pages\/data-sharing-opt-out","button_text_size":20,"button_padding_vertical":16,"button_padding_horizontal":75,"button_color":"#8B0000","button_hover_color":"#6B0000","button_text_color":"#ffffff","background_color":"#f3f3f3"},"blocks":{}}},"block_order":["ai_gen_block_aca0490_i6FkQc"],"settings":{}}},"order":["hotspot_section_3xzAeg","hero_slider_aEwJ3M","featured_collection_qrLjcE","perfume_comparison_TGenwY","video_slider_VbQc9k","single_video_m78n4p","collection_slider_XJRWM9","testimonial_7CT3d7","metaobjects_custom_hero_banner_i4hia7","multi_colum_custom_7kBe6R","teeth_protection_Nciwbn","featured_blog_qhCGWt","video_slider_mJHCgw","17755392007dd75c5a","17755394299730d804","177554606992247901","17755528149240e0dc","17755572314e0dddeb","177555808575db8a1e"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hotspot_section_3xzAeg": {
+      "type": "hotspot-section",
+      "blocks": {
+        "hotspot_jh6tMC": {
+          "type": "hotspot",
+          "settings": {
+            "top": 67,
+            "left": 68,
+            "product": "perfume-13"
+          }
+        },
+        "hotspot_GjN7Ez": {
+          "type": "hotspot",
+          "settings": {
+            "top": 66,
+            "left": 33,
+            "product": "perfume-4"
+          }
+        },
+        "hotspot_4trBRT": {
+          "type": "hotspot",
+          "settings": {
+            "top": 60,
+            "left": 50,
+            "product": "perfume-14"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_jh6tMC",
+        "hotspot_GjN7Ez",
+        "hotspot_4trBRT"
+      ],
+      "name": "Hotspot Section",
+      "settings": {
+        "main_image": "shopify://shop_images/Gemini_Generated_Image_c2qsldc2qsldc2qs.png"
+      }
+    },
+    "hero_slider_aEwJ3M": {
+      "type": "Hero-slider",
+      "blocks": {
+        "hero_slider_KpxCPC": {
+          "type": "hero_slider",
+          "settings": {
+            "block_image": "shopify://shop_images/main-banner-02_fd625424-864c-4990-beae-97723806d15a.webp",
+            "heading": "Natural Perfume",
+            "sub_heading": "Strong Fragrance Perfume",
+            "pera": "Phasellus condimentum, elit eu sagittis ullamcorper, mauris enim interdum quam.",
+            "btn_text": "Discover Now",
+            "btn_url": "",
+            "layout": "left"
+          }
+        },
+        "hero_slider_RBCYPE": {
+          "type": "hero_slider",
+          "settings": {
+            "block_image": "shopify://shop_images/Gemini_Generated_Image_ibf2miibf2miibf2_fe06d8c4-0fc6-428f-93da-aa76a1a8546f.png",
+            "heading": "Fragrance of Love!",
+            "sub_heading": "Perfume make day special",
+            "pera": "Phasellus condimentum, elit eu sagittis ullamcorper, mauris eniminterdum quam, et efficitur ex nisl ut ante.",
+            "btn_text": "Discover Now",
+            "btn_url": "",
+            "layout": "right"
+          }
+        }
+      },
+      "block_order": [
+        "hero_slider_KpxCPC",
+        "hero_slider_RBCYPE"
+      ],
+      "name": "Hero-Slider",
+      "settings": {}
+    },
+    "featured_collection_qrLjcE": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "fresh-daily-wear-collection",
+        "products_to_show": 5,
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "perfume_comparison_TGenwY": {
+      "type": "perfume-comparison",
+      "name": "Before After Comparison",
+      "settings": {
+        "image_before": "shopify://shop_images/Gemini_Generated_Image_9b4fem9b4fem9b4f.png",
+        "image_after": "shopify://shop_images/Gemini_Generated_Image_nmv5djnmv5djnmv5.png",
+        "heading": "The Essence of Unforgettable Presence",
+        "subtext": "The Art of Scent — Individual Notes become an Unforgettable Journey",
+        "button_label": "Discover Now",
+        "button_link": "shopify://pages/the-essence-of-unforgettable-presence-the-art-of-scent",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "video_slider_VbQc9k": {
+      "type": "video-slider",
+      "blocks": {
+        "video_FbjhRG": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/videoplayback (4).mp4"
+          }
+        },
+        "video_dcbayF": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/videoplayback (2).mp4"
+          }
+        },
+        "video_qxERQw": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/videoplayback.mp4"
+          }
+        },
+        "video_pdTErP": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/videoplayback (3).mp4"
+          }
+        },
+        "video_Dgp8mX": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/videoplayback (1).mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_FbjhRG",
+        "video_dcbayF",
+        "video_qxERQw",
+        "video_pdTErP",
+        "video_Dgp8mX"
+      ],
+      "name": "Video Slider",
+      "settings": {}
+    },
+    "single_video_m78n4p": {
+      "type": "single-video",
+      "name": "Single Video",
+      "settings": {
+        "video": "shopify://files/videos/1704718-hd_1920_1080_30fps.mp4",
+        "cover_image": "shopify://shop_images/product-jpeg.jpg"
+      }
+    },
+    "collection_slider_XJRWM9": {
+      "type": "collection-slider",
+      "name": "collection-slider",
+      "settings": {}
+    },
+    "testimonial_7CT3d7": {
+      "type": "testimonial",
+      "blocks": {
+        "testimonial_LWLFiN": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonial-user-1.webp",
+            "name": "Zephyr Storm",
+            "designation": "Exo-Botanist",
+            "review": "\"Absolutely enchanted by the exquisite scents at Fragrant. Each fragrance tells a story, and I've found my signature scent that's as unique as it is captivating!\""
+          }
+        },
+        "testimonial_UjA87F": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonial-user-2.webp",
+            "name": "Esme Starlight",
+            "designation": "Quantum Analyst",
+            "review": "\"I'm a loyal customer of Fragrant because their curated collection never fails to surprise and delight. Every purchase feels like unlocking a new olfactory adventure!\""
+          }
+        },
+        "testimonial_8qC3kE": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonial-user-3.webp",
+            "name": "Apollo Frost",
+            "designation": "Exoplanet Explorer",
+            "review": "\"Absolutely enchanted by the exquisite scents at Fragrant. Each fragrance tells a story, and I've found my signature scent that's as unique as it is captivating!\""
+          }
+        },
+        "testimonial_JX4naD": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonial-user-4.webp",
+            "name": "Felix Ember",
+            "designation": "Martian Agronomist",
+            "review": "\"I'm a loyal customer of Fragrant because their curated collection never fails to surprise and delight. Every purchase feels like unlocking a new olfactory adventure!\""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_LWLFiN",
+        "testimonial_UjA87F",
+        "testimonial_8qC3kE",
+        "testimonial_JX4naD"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "heading": "TESTIMONIALS"
+      }
+    },
+    "metaobjects_custom_hero_banner_i4hia7": {
+      "type": "metaobjects-custom-hero-banner",
+      "name": "Metaobject Section",
+      "settings": {}
+    },
+    "multi_colum_custom_7kBe6R": {
+      "type": "multi-colum-custom",
+      "blocks": {
+        "multi_column_card_Lp7Qkh": {
+          "type": "multi_column_card",
+          "settings": {
+            "column_image_round": "shopify://shop_images/user-01.webp",
+            "column_heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna sed lectus iaculis fringilla. In eu ligula efficitur,",
+            "column_text": "Meka don",
+            "column_text_2": "Developer"
+          }
+        },
+        "multi_column_card_HKemTX": {
+          "type": "multi_column_card",
+          "settings": {
+            "column_image_round": "shopify://shop_images/user-02.webp",
+            "column_heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna sed lectus iaculis fringilla. In eu ligula efficitur,",
+            "column_text": "Meka don",
+            "column_text_2": "Developer"
+          }
+        },
+        "multi_column_card_NdKcUe": {
+          "type": "multi_column_card",
+          "settings": {
+            "column_image_round": "shopify://shop_images/user-03.webp",
+            "column_heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna sed lectus iaculis fringilla. In eu ligula efficitur,",
+            "column_text": "Meka don",
+            "column_text_2": "Developer"
+          }
+        }
+      },
+      "block_order": [
+        "multi_column_card_Lp7Qkh",
+        "multi_column_card_HKemTX",
+        "multi_column_card_NdKcUe"
+      ],
+      "name": "Multi Column",
+      "settings": {}
+    },
+    "teeth_protection_Nciwbn": {
+      "type": "teeth-protection",
+      "blocks": {
+        "feature_J6hwfX": {
+          "type": "feature",
+          "settings": {
+            "title": "{{ metaobjects.teeth_block[\"the-highest-quality-and-protection-for-your-teeth\"].text | metafield_tag }}",
+            "custom_html": "<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M45 2.95996H3V33.5H45V2.95996Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"></path><path d=\"M33.5403 33.5001C36.6994 33.5001 39.2603 30.9391 39.2603 27.7801C39.2603 24.621 36.6994 22.0601 33.5403 22.0601C30.3812 22.0601 27.8203 24.621 27.8203 27.7801C27.8203 30.9391 30.3812 33.5001 33.5403 33.5001Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"></path><path d=\"M29.7197 33.5H37.3597V43.04L33.5397 41.14L29.7197 43.04V33.5Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"></path><path d=\"M10.6406 12.5H37.3606\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"></path><path d=\"M10.6406 22.04H24.0006\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-miterlimit=\"10\"></path> </svg>",
+            "text": "{{ metaobjects.teeth_block[\"the-highest-quality-and-protection-for-your-teeth\"].sub_text.value }}"
+          }
+        },
+        "feature_xqEYCw": {
+          "type": "feature",
+          "settings": {
+            "title": "{{ metaobjects.teeth_block[\"at-the-same-time-it-protects-and-whitens\"].text | metafield_tag }}",
+            "custom_html": "<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M46.5423 28.8001C46.5936 27.1463 45.987 25.5397 44.8555 24.3325C43.724 23.1253 42.16 22.416 40.5063 22.3601C39.6611 22.3676 38.8274 22.5584 38.063 22.9192C37.2985 23.28 36.6214 23.8023 36.0783 24.4501C35.5357 23.8023 34.859 23.2799 34.0949 22.919C33.3307 22.5582 32.4974 22.3675 31.6523 22.3601C29.9985 22.4154 28.4342 23.1246 27.3026 24.3319C26.171 25.5392 25.5646 27.1462 25.6163 28.8001C25.7763 31.2753 26.621 33.6573 28.0563 35.6801C28.2191 35.9072 28.3211 36.1721 28.3526 36.4497C28.3841 36.7273 28.3441 37.0083 28.2363 37.2661C27.562 38.9221 27.2189 40.6941 27.2263 42.4821V44.4941C27.2263 45.0277 27.4383 45.5395 27.8156 45.9168C28.193 46.2941 28.7047 46.5061 29.2383 46.5061C29.772 46.5061 30.2837 46.2941 30.661 45.9168C31.0384 45.5395 31.2503 45.0277 31.2503 44.4941C31.1877 43.2011 31.6289 41.9343 32.4812 40.96C33.3336 39.9857 34.5305 39.3799 35.8203 39.2701C36.5098 39.2338 37.1991 39.3451 37.842 39.5967C38.4849 39.8483 39.0667 40.2343 39.5484 40.7288C40.0301 41.2234 40.4007 41.8152 40.6352 42.4646C40.8697 43.1139 40.9628 43.8059 40.9083 44.4941C40.9083 45.0277 41.1203 45.5395 41.4976 45.9168C41.875 46.2941 42.3867 46.5061 42.9203 46.5061C43.454 46.5061 43.9657 46.2941 44.343 45.9168C44.7204 45.5395 44.9323 45.0277 44.9323 44.4941V42.4761C44.9413 40.5761 44.553 38.6952 43.7923 36.9541C43.6628 36.6904 43.6061 36.3969 43.6283 36.1039C43.6504 35.811 43.7506 35.5293 43.9183 35.2881C45.4079 33.4281 46.3201 31.1726 46.5423 28.8001V28.8001Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M4.91406 1.65234L25.121 7.67707L21.7901 18.8491C21.7143 19.1032 21.5407 19.3169 21.3074 19.443C21.0741 19.5692 20.8002 19.5975 20.5461 19.5217L2.25571 14.0684C2.00155 13.9926 1.7879 13.819 1.66177 13.5857C1.53563 13.3524 1.50734 13.0785 1.58312 12.8244L4.91406 1.65234Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M4.91406 1.65796L46.5421 14.068\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M10.5868 12.1499L9.38281 16.1899\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path> </svg>",
+            "text": "{{ metaobjects.teeth_block[\"at-the-same-time-it-protects-and-whitens\"].sub_text.value }}"
+          }
+        },
+        "feature_iiEbtT": {
+          "type": "feature",
+          "settings": {
+            "title": "{{ metaobjects.teeth_block[\"round-rectangular-and-super-wide\"].text | metafield_tag }}",
+            "custom_html": "<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1.5 45.6839L21.676 25.2179C22.3082 24.5855 23.1658 24.2301 24.06 24.2299H28.418C29.3119 24.2303 30.1694 23.8756 30.802 23.2439L46.5 7.54395\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M29.3302 10.4125L37.4506 2.29211C37.6381 2.10457 37.8925 1.99921 38.1577 1.99921C38.4229 1.99921 38.6772 2.10457 38.8648 2.29211L45.3093 8.73668L35.7747 18.2713L29.3302 11.8267C29.1426 11.6392 29.0373 11.3848 29.0373 11.1196C29.0373 10.8544 29.1426 10.6001 29.3302 10.4125V10.4125Z\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M33.623 6.12012L37.209 9.70812\" stroke=\"#5B6C8F\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path> </svg>",
+            "text": "{{ metaobjects.teeth_block[\"round-rectangular-and-super-wide\"].sub_text.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "feature_J6hwfX",
+        "feature_xqEYCw",
+        "feature_iiEbtT"
+      ],
+      "name": "Teeth Protection",
+      "settings": {
+        "heading": "{{ metaobjects.teeth[\"the-brush-handle-fits-perfectly-in-the-hand-is-slim-and-beautifully-made\"].headingg | metafield_tag }}",
+        "subheading": "{{ metaobjects.teeth[\"the-brush-handle-fits-perfectly-in-the-hand-is-slim-and-beautifully-made\"].sub_heading.value }}"
+      }
+    },
+    "featured_blog_qhCGWt": {
+      "type": "featured-blog",
+      "disabled": true,
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Blog posts",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_slider_mJHCgw": {
+      "type": "video-slider",
+      "blocks": {
+        "video_xXETWq": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_H96HHa": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_7LAwCY": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_yPGw7j": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_eDCeEF": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_mpqMFJ": {
+          "type": "video",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "video_xXETWq",
+        "video_H96HHa",
+        "video_7LAwCY",
+        "video_yPGw7j",
+        "video_eDCeEF",
+        "video_mpqMFJ"
+      ],
+      "name": "Video Slider",
+      "settings": {}
+    },
+    "17755392007dd75c5a": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "17755394299730d804": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_testimonials_carousel_AKXV3p": {
+          "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "all",
+            "products": [],
+            "star_rating": "all",
+            "max_reviews": 20,
+            "quote_marks_size": "small",
+            "product_name_text_size": "small",
+            "verified_badge_style": "icon",
+            "card_height": "medium",
+            "text_size": "small",
+            "stars_size": "medium",
+            "arrows_position": "bottom",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "quote_marks_style": "serif",
+            "card_color": "#f9f9f9",
+            "stars_and_quote_marks_color": "#108474",
+            "text_color": "#000000",
+            "arrows_color": "#000000",
+            "show_border": false,
+            "border_color": "#108474",
+            "show_drop_shadow": false,
+            "transition_speed": 5,
+            "header_text": "Customers are saying",
+            "show_average_rating": true,
+            "rating_display": "default"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_testimonials_carousel_AKXV3p"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "177554606992247901": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17755528149240e0dc": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8ec2798_6wiC3p": {
+          "type": "ai_gen_block_8ec2798",
+          "settings": {
+            "text": "Limited Time Offer",
+            "button_text": "Get 61% OFF",
+            "button_link": "",
+            "background_color": "#121212",
+            "vertical_padding": 12,
+            "spacing": 16,
+            "text_color": "#ffffff",
+            "text_size": 16,
+            "text_weight": "400",
+            "button_color": "#cc0000",
+            "button_hover_color": "#990000",
+            "button_text_color": "#ffffff",
+            "button_text_size": 14,
+            "button_text_weight": "700",
+            "button_radius": 20,
+            "button_padding_vertical": 8,
+            "button_padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8ec2798_6wiC3p"
+      ],
+      "settings": {}
+    },
+    "17755572314e0dddeb": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_15c24bb_xyQJxY": {
+          "type": "ai_gen_block_15c24bb",
+          "settings": {
+            "product_image": "shopify://shop_images/Untitled_design_-_2025-09-23T002912.241_265ad4c6-1008-4c52-996c-1c94cde21ce0.webp",
+            "sale_heading": "SALE ENDS SOON",
+            "sale_heading_size": 24,
+            "sale_heading_color": "#dc2626",
+            "countdown_end_date": "2026-04-15",
+            "countdown_end_time": "23:59:59",
+            "countdown_number_size": 28,
+            "countdown_label_size": 12,
+            "countdown_bg_color": "#dc2626",
+            "countdown_text_color": "#ffffff",
+            "countdown_border_radius": 8,
+            "product_name": "Premium Product Name",
+            "product_name_size": 22,
+            "cta_button_text": "GET 61% OFF",
+            "cta_button_link": "",
+            "cta_font_size": 18,
+            "cta_bg_color": "#dc2626",
+            "cta_text_color": "#ffffff",
+            "cta_border_radius": 8,
+            "sellout_risk": "High",
+            "guarantee_text": "60-Day Money Back Guarantee!",
+            "info_text_size": 13,
+            "desktop_width_percent": 100,
+            "background_color": "#f3f4f6",
+            "text_color": "#1f2937",
+            "highlight_color": "#dc2626",
+            "border_width": 3,
+            "border_color": "#10b981",
+            "border_radius": 12
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_15c24bb_xyQJxY"
+      ],
+      "settings": {}
+    },
+    "177555808575db8a1e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_aca0490_i6FkQc": {
+          "type": "ai_gen_block_aca0490",
+          "settings": {
+            "text_width_percent": 60,
+            "guarantee_text": "60 Day Money Back Guarantee",
+            "text_size": 26,
+            "text_color": "#121212",
+            "button_text": "GET 61% OFF",
+            "button_link": "shopify://pages/data-sharing-opt-out",
+            "button_text_size": 20,
+            "button_padding_vertical": 16,
+            "button_padding_horizontal": 75,
+            "button_color": "#8b0000",
+            "button_hover_color": "#6b0000",
+            "button_text_color": "#ffffff",
+            "background_color": "#f3f3f3"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_aca0490_i6FkQc"
+      ],
+      "settings": {}
+    },
+    "custom_perfume_showcase_qpBkHc": {
+      "type": "custom-perfume-showcase",
+      "name": "Perfume Showcase",
+      "settings": {
+        "subtitle": "Luxury Collection",
+        "title": "Exquisite Scent Profile",
+        "description": "Discover the art of luxury perfumery crafted with the finest gold-standard ingredients.",
+        "image": "shopify://shop_images/Gemini_Generated_Image_ibf2miibf2miibf2_fe06d8c4-0fc6-428f-93da-aa76a1a8546f.webp",
+        "button_label": "Shop Now",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "hotspot_section_3xzAeg",
+    "hero_slider_aEwJ3M",
+    "featured_collection_qrLjcE",
+    "perfume_comparison_TGenwY",
+    "video_slider_VbQc9k",
+    "single_video_m78n4p",
+    "collection_slider_XJRWM9",
+    "testimonial_7CT3d7",
+    "metaobjects_custom_hero_banner_i4hia7",
+    "multi_colum_custom_7kBe6R",
+    "teeth_protection_Nciwbn",
+    "featured_blog_qhCGWt",
+    "video_slider_mJHCgw",
+    "17755392007dd75c5a",
+    "17755394299730d804",
+    "177554606992247901",
+    "17755528149240e0dc",
+    "17755572314e0dddeb",
+    "177555808575db8a1e",
+    "custom_perfume_showcase_qpBkHc"
+  ]
+}
