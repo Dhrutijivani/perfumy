@@ -47,6 +47,18 @@
         "main_image": "shopify://shop_images/Gemini_Generated_Image_c2qsldc2qsldc2qs.png"
       }
     },
+    "custom_perfume_showcase_qpBkHc": {
+      "type": "custom-perfume-showcase",
+      "name": "Perfume Showcase",
+      "settings": {
+        "subtitle": "Luxury Collection",
+        "title": "Exquisite Scent Profile",
+        "description": "Discover the art of luxury perfumery crafted with the finest gold-standard ingredients.",
+        "image": "shopify://shop_images/Gemini_Generated_Image_ibf2miibf2miibf2_fe06d8c4-0fc6-428f-93da-aa76a1a8546f.webp",
+        "button_label": "Shop Now",
+        "button_link": ""
+      }
+    },
     "hero_slider_aEwJ3M": {
       "type": "Hero-slider",
       "blocks": {
@@ -181,18 +193,6 @@
       "type": "collection-slider",
       "name": "collection-slider",
       "settings": {}
-    },
-    "custom_perfume_showcase_qpBkHc": {
-      "type": "custom-perfume-showcase",
-      "name": "Perfume Showcase",
-      "settings": {
-        "subtitle": "Luxury Collection",
-        "title": "Exquisite Scent Profile",
-        "description": "Discover the art of luxury perfumery crafted with the finest gold-standard ingredients.",
-        "image": "shopify://shop_images/Gemini_Generated_Image_ibf2miibf2miibf2_fe06d8c4-0fc6-428f-93da-aa76a1a8546f.webp",
-        "button_label": "Shop Now",
-        "button_link": ""
-      }
     },
     "testimonial_7CT3d7": {
       "type": "testimonial",
@@ -541,6 +541,17 @@
         "ai_gen_block_aca0490_i6FkQc"
       ],
       "settings": {}
+    },
+    "custom_perfume_text_Ppe9qp": {
+      "type": "custom-perfume-text",
+      "name": "Perfume Simple Text",
+      "settings": {
+        "sub_heading": "Elegance in a Bottle",
+        "heading": "Crafted for the Modern Connoisseur",
+        "description": "<p>Experience a sophisticated blend of rare oud, French lavender, and warm amber notes designed to leave an unforgettable impression.</p>",
+        "alignment": "center",
+        "bg_color": "#ffffff"
+      }
     }
   },
   "order": [
@@ -563,6 +574,7 @@
     "177554606992247901",
     "17755528149240e0dc",
     "17755572314e0dddeb",
-    "177555808575db8a1e"
+    "177555808575db8a1e",
+    "custom_perfume_text_Ppe9qp"
   ]
 }
