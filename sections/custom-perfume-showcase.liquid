@@ -1,0 +1,138 @@
+<div class="perfume-showcase-wrapper">
+  <div class="perfume-showcase-container">
+    
+    <!-- Left Side: Content -->
+    <div class="perfume-content-box">
+      <span class="perfume-subtitle">{{ section.settings.subtitle }}</span>
+      <h2 class="perfume-title">{{ section.settings.title }}</h2>
+      <p class="perfume-description">{{ section.settings.description }}</p>
+      <a href="{{ section.settings.button_link }}" class="perfume-btn">{{ section.settings.button_label }}</a>
+    </div>
+
+    <!-- Right Side: Image -->
+    <div class="perfume-image-box">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image.alt }}" loading="lazy">
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+{% style %}
+.perfume-showcase-wrapper {
+  background: #fdfbf7;
+  padding: 60px 20px;
+}
+.perfume-showcase-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.perfume-content-box {
+  flex: 1;
+}
+.perfume-subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b3924e; /* Luxury Gold color */
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+.perfume-title {
+  font-size: 36px;
+  color: #111;
+  margin: 0 0 20px 0;
+  font-family: serif;
+}
+.perfume-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.perfume-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: red;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+.perfume-btn:hover {
+  background: #b3924e;
+}
+.perfume-image-box {
+  flex: 1;
+  text-align: center;
+}
+.perfume-image-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .perfume-showcase-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Perfume Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Luxury Collection"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Exquisite Scent Profile"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover the art of luxury perfumery crafted with the finest gold-standard ingredients."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Perfume Image"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Perfume Showcase"
+    }
+  ]
+}
+{% endschema %}
